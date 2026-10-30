@@ -71,7 +71,7 @@
 
         .container {
             width: 100%;
-            max-width: 1220px;
+            max-width: 1360px;
             margin: 0 auto;
             padding: 0 1.5rem;
             position: relative;
@@ -814,8 +814,29 @@
 
         .themes-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
-            gap: 2.2rem;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.4rem;
+        }
+
+        @media (max-width: 1200px) {
+            .themes-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1.25rem;
+            }
+        }
+
+        @media (max-width: 860px) {
+            .themes-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.15rem;
+            }
+        }
+
+        @media (max-width: 560px) {
+            .themes-grid {
+                grid-template-columns: 1fr;
+                gap: 1.25rem;
+            }
         }
 
         .theme-card {
@@ -923,16 +944,18 @@
         .dev-tab {
             border: none;
             background: transparent;
-            padding: 4px 10px;
+            width: 32px;
+            height: 28px;
+            padding: 0;
             border-radius: 999px;
-            font-size: 0.66rem;
+            font-size: 0.78rem;
             font-weight: 700;
             color: #64748b;
             cursor: pointer;
             transition: all 0.25s var(--ease);
             display: inline-flex;
             align-items: center;
-            gap: 4px;
+            justify-content: center;
         }
 
         .dev-tab:hover {
@@ -1604,10 +1627,8 @@
             transform: translateY(-2px);
         }
 
-        }
-
         /* ========================================================
-           UNIFORM CARD STYLING (Semua Card Seragam & Bersih)
+           UNIFORM CARD STYLING (4 CARD PER ROW DI DESKTOP)
            ======================================================== */
         .theme-card {
             background: #ffffff;
@@ -1615,6 +1636,9 @@
             border-radius: 20px;
             box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
             transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
         }
 
         .theme-card:hover {
@@ -1624,6 +1648,7 @@
         }
 
         .theme-card .mockup-stage {
+            height: 275px;
             background: radial-gradient(circle at 50% 25%, #ffffff 0%, #f8fafc 65%, #f1f5f9 100%);
             border-bottom: 1px solid var(--border-subtle);
         }
@@ -1633,12 +1658,71 @@
             border: 1px solid var(--border-subtle);
             color: #0f172a;
             box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+            font-size: 0.65rem;
+            padding: 4px 9px;
         }
 
-        .theme-card .card-title {
+        /* Responsive frame scaling to fit 4 cards per row perfectly */
+        .themes-grid .phone-trio {
+            width: 94px;
+            height: 192px;
+        }
+
+        .themes-grid .phone-left {
+            transform: translateX(-42px) rotateY(18deg) rotateZ(-6deg) scale(0.92);
+        }
+
+        .themes-grid .phone-right {
+            transform: translateX(42px) rotateY(-18deg) rotateZ(6deg) scale(0.92);
+        }
+
+        .themes-grid .theme-card:hover .phone-left {
+            transform: translateX(-50px) rotateY(12deg) rotateZ(-4deg) translateY(-5px) scale(0.94);
+        }
+
+        .themes-grid .theme-card:hover .phone-right {
+            transform: translateX(50px) rotateY(-12deg) rotateZ(4deg) translateY(-5px) scale(0.94);
+        }
+
+        .themes-grid .phone-single {
+            width: 118px;
+            height: 236px;
+        }
+
+        .themes-grid .tablet-frame {
+            width: 205px;
+            height: 158px;
+        }
+
+        .themes-grid .laptop-lid {
+            width: 210px;
+            height: 132px;
+        }
+
+        .themes-grid .laptop-base {
+            width: 242px;
+            height: 10px;
+        }
+
+        .theme-card .card-body {
+            padding: 1.25rem 1.15rem 1.15rem;
+        }
+
+        .theme-card .card-theme-name {
             color: #0f172a;
-            font-size: 1.15rem;
+            font-size: 1.05rem;
             font-weight: 800;
+        }
+
+        .theme-card .card-price-strike {
+            font-size: 0.88rem;
+            margin-top: 4px;
+        }
+
+        .theme-card .card-price-current {
+            font-size: 1.45rem;
+            margin-top: 2px;
+            margin-bottom: 0.95rem;
         }
 
         .theme-card .btn-lihat-contoh {
@@ -1646,13 +1730,20 @@
             color: #ffffff;
             border-radius: 999px;
             font-weight: 700;
-            padding: 11px;
+            font-size: 0.85rem;
+            padding: 10px 14px;
             transition: all 0.25s;
         }
 
         .theme-card .btn-lihat-contoh:hover {
             background: var(--gold);
             color: #ffffff;
+        }
+
+        .theme-card .btn-action-icon {
+            width: 38px;
+            height: 38px;
+            font-size: 0.85rem;
         }
 
         /* Device Preview Modal */
@@ -2378,60 +2469,195 @@
         }
 
         /* ========================================================
-           14 FITUR LENGKAP GRID (#fitur)
+           MODERN 14-FEATURE SHOWCASE GRID (#fitur)
            ======================================================== */
+        .feature-tabs-wrap {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin: 2.2rem auto 2.5rem;
+        }
+
+        .feature-tab {
+            background: #ffffff;
+            border: 1.5px solid var(--border-subtle);
+            color: var(--text-secondary);
+            font-family: inherit;
+            font-size: 0.86rem;
+            font-weight: 700;
+            padding: 9px 20px;
+            border-radius: 999px;
+            cursor: pointer;
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .feature-tab:hover {
+            border-color: #0f172a;
+            color: #0f172a;
+            transform: translateY(-2px);
+        }
+
+        .feature-tab.active {
+            background: #0f172a;
+            border-color: #0f172a;
+            color: #ffffff;
+            box-shadow: 0 4px 14px rgba(15, 23, 42, 0.16);
+        }
+
         .features-grid-14 {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-            gap: 1.25rem;
-            margin-top: 2.2rem;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.35rem;
+            margin-top: 1.2rem;
+        }
+
+        @media (max-width: 1200px) {
+            .features-grid-14 {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1.25rem;
+            }
+        }
+
+        @media (max-width: 860px) {
+            .features-grid-14 {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.15rem;
+            }
+        }
+
+        @media (max-width: 560px) {
+            .features-grid-14 {
+                grid-template-columns: 1fr;
+                gap: 1.15rem;
+            }
         }
 
         .feature-box {
             background: #ffffff;
             border: 1px solid var(--border-subtle);
             border-radius: 20px;
-            padding: 1.5rem 1.4rem;
+            padding: 1.6rem 1.4rem;
             display: flex;
             flex-direction: column;
-            gap: 0.85rem;
+            justify-content: space-between;
+            gap: 0.95rem;
             transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
             position: relative;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(15, 23, 42, 0.03);
+        }
+
+        .feature-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: transparent;
+            transition: background 0.3s;
         }
 
         .feature-box:hover {
             border-color: #cbd5e1;
-            transform: translateY(-4px);
-            box-shadow: 0 14px 30px rgba(15, 23, 42, 0.06);
+            transform: translateY(-5px);
+            box-shadow: 0 16px 32px rgba(15, 23, 42, 0.08);
         }
 
-        .feature-box-header {
+        .feature-box:hover::before {
+            background: var(--gold-gradient);
+        }
+
+        .feature-box-top {
             display: flex;
             align-items: center;
-            gap: 12px;
+            justify-content: space-between;
         }
 
         .feature-icon-wrap {
-            width: 44px;
-            height: 44px;
-            border-radius: 12px;
-            background: var(--gold-soft-bg);
-            color: var(--gold);
+            width: 48px;
+            height: 48px;
+            border-radius: 14px;
             display: grid;
             place-items: center;
-            font-size: 1.15rem;
+            font-size: 1.25rem;
             flex-shrink: 0;
-            transition: all 0.25s;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .icon-blue {
+            background: #e0f2fe;
+            color: #0284c7;
+        }
+
+        .icon-gold {
+            background: #fef3c7;
+            color: #b3822a;
+        }
+
+        .icon-emerald {
+            background: #dcfce7;
+            color: #10b981;
         }
 
         .feature-box:hover .feature-icon-wrap {
-            background: #0f172a;
-            color: #ffffff;
+            transform: scale(1.08) rotate(4deg);
+        }
+
+        .feature-num {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: #e2e8f0;
+            line-height: 1;
+            transition: color 0.3s;
+        }
+
+        .feature-box:hover .feature-num {
+            color: var(--gold);
+        }
+
+        .feature-box-content {
+            display: flex;
+            flex-direction: column;
+            gap: 0.35rem;
+        }
+
+        .feature-badge-mini {
+            display: inline-block;
+            font-size: 0.68rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            padding: 3px 9px;
+            border-radius: 6px;
+            align-self: flex-start;
+            margin-bottom: 0.3rem;
+        }
+
+        .badge-blue {
+            background: #f0f9ff;
+            color: #0369a1;
+        }
+
+        .badge-gold {
+            background: #fffbeb;
+            color: #b45309;
+        }
+
+        .badge-emerald {
+            background: #f0fdf4;
+            color: #15803d;
         }
 
         .feature-box h4 {
-            font-size: 1rem;
-            font-weight: 700;
+            font-size: 1.05rem;
+            font-weight: 800;
             color: #0f172a;
             line-height: 1.35;
             margin: 0;
@@ -2442,19 +2668,6 @@
             color: var(--text-secondary);
             line-height: 1.6;
             margin: 0;
-        }
-
-        .feature-badge-mini {
-            display: inline-block;
-            font-size: 0.65rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.04em;
-            background: #f1f5f9;
-            color: #475569;
-            padding: 2px 8px;
-            border-radius: 6px;
-            align-self: flex-start;
         }
 
         /* Clean Footer */
@@ -2639,7 +2852,7 @@
                         <div class="bento-mini-mockup">
                             <i class="fas fa-layer-group"
                                 style="font-size:1.4rem; color:#0284c7; margin-bottom:6px;"></i>
-                            <div style="font-size:0.82rem; font-weight:800; color:#0f172a;">17+ Tema Siap Pakai</div>
+                            <div style="font-size:0.82rem; font-weight:800; color:#0f172a;">21+ Tema Siap Pakai</div>
                             <div style="font-size:0.7rem; color:#64748b;">Adat, Luxury &amp; Minimalis</div>
                         </div>
                     </div>
@@ -2688,177 +2901,199 @@
             <div style="margin-top: 4.5rem;">
                 <div class="section-header-center">
                     <div class="pill-badge"><i class="fas fa-wand-magic-sparkles"></i> 14 Fitur Lengkap</div>
-                    <h2 class="section-h2">Fitur Lengkap Undangan Pernikahan</h2>
-                    <p class="section-sub">Semua kebutuhan undangan pernikahan modern telah kami sediakan secara lengkap tanpa biaya tersembunyi.</p>
+                    <h2 class="section-h2">Fitur Lengkap, <em>Semua Kebutuhan Terpenuhi</em></h2>
+                    <p class="section-sub">14 fitur eksklusif dan interaktif yang dirancang khusus untuk memberikan pengalaman terbaik bagi Anda dan seluruh tamu undangan.</p>
                 </div>
 
-                <div class="features-grid-14">
+                <!-- Category Filter Tabs -->
+                <div class="feature-tabs-wrap">
+                    <button type="button" class="feature-tab active" onclick="filterFeatures('all', this)"><i class="fas fa-border-all"></i> Semua Fitur (14)</button>
+                    <button type="button" class="feature-tab" onclick="filterFeatures('tamu', this)"><i class="fas fa-users"></i> Tamu &amp; Undangan</button>
+                    <button type="button" class="feature-tab" onclick="filterFeatures('media', this)"><i class="fas fa-photo-film"></i> Media &amp; Cerita</button>
+                    <button type="button" class="feature-tab" onclick="filterFeatures('acara', this)"><i class="fas fa-calendar-check"></i> Acara &amp; Kado</button>
+                </div>
+
+                <div class="features-grid-14" id="featuresGrid">
                     <!-- 1. Unlimited Share -->
-                    <div class="feature-box">
-                        <div class="feature-box-header">
-                            <div class="feature-icon-wrap"><i class="fas fa-share-nodes"></i></div>
-                            <div>
-                                <h4>Unlimited Share</h4>
-                                <span class="feature-badge-mini">Bebas Kuota</span>
-                            </div>
+                    <div class="feature-box" data-cat="tamu">
+                        <div class="feature-box-top">
+                            <div class="feature-icon-wrap icon-blue"><i class="fas fa-share-nodes"></i></div>
+                            <span class="feature-num">01</span>
                         </div>
-                        <p>Bebas sebar tautan undangan pernikahan ke ribuan kontak keluarga, teman, dan grup tanpa batasan.</p>
+                        <div class="feature-box-content">
+                            <span class="feature-badge-mini badge-blue">Bebas Kuota</span>
+                            <h4>Unlimited Share</h4>
+                            <p>Bebas sebar tautan undangan pernikahan ke ribuan kontak keluarga, teman, dan grup tanpa batasan kuota.</p>
+                        </div>
                     </div>
 
                     <!-- 2. Unlimited Custom Nama Tamu -->
-                    <div class="feature-box">
-                        <div class="feature-box-header">
-                            <div class="feature-icon-wrap"><i class="fas fa-user-tag"></i></div>
-                            <div>
-                                <h4>Unlimited Custom Nama Tamu</h4>
-                                <span class="feature-badge-mini">Personal</span>
-                            </div>
+                    <div class="feature-box" data-cat="tamu">
+                        <div class="feature-box-top">
+                            <div class="feature-icon-wrap icon-blue"><i class="fas fa-user-tag"></i></div>
+                            <span class="feature-num">02</span>
                         </div>
-                        <p>Generate tautan khusus dengan nama tamu otomatis tanpa batas agar undangan terasa lebih sopan dan eksklusif.</p>
+                        <div class="feature-box-content">
+                            <span class="feature-badge-mini badge-blue">Personal Link</span>
+                            <h4>Unlimited Custom Nama Tamu</h4>
+                            <p>Generate tautan khusus dengan nama tamu otomatis tanpa batas agar undangan terasa lebih sopan dan eksklusif.</p>
+                        </div>
                     </div>
 
                     <!-- 3. Konfirmasi Kehadiran (RSVP) -->
-                    <div class="feature-box">
-                        <div class="feature-box-header">
-                            <div class="feature-icon-wrap"><i class="fas fa-clipboard-check"></i></div>
-                            <div>
-                                <h4>Konfirmasi Kehadiran (RSVP)</h4>
-                                <span class="feature-badge-mini">Realtime</span>
-                            </div>
+                    <div class="feature-box" data-cat="tamu">
+                        <div class="feature-box-top">
+                            <div class="feature-icon-wrap icon-blue"><i class="fas fa-clipboard-check"></i></div>
+                            <span class="feature-num">03</span>
                         </div>
-                        <p>Tamu dapat mengonfirmasi kehadiran serta jumlah orang yang hadir secara instan dan langsung terdata rapi.</p>
+                        <div class="feature-box-content">
+                            <span class="feature-badge-mini badge-blue">Realtime Live</span>
+                            <h4>Konfirmasi Kehadiran (RSVP)</h4>
+                            <p>Tamu dapat mengonfirmasi kehadiran serta jumlah orang yang hadir secara instan dan langsung terdata rapi.</p>
+                        </div>
                     </div>
 
-                    <!-- 4. Gallery Foto dan Video -->
-                    <div class="feature-box">
-                        <div class="feature-box-header">
-                            <div class="feature-icon-wrap"><i class="fas fa-photo-film"></i></div>
-                            <div>
-                                <h4>Gallery Foto dan Video</h4>
-                                <span class="feature-badge-mini">Kualitas HD</span>
-                            </div>
+                    <!-- 4. Ucapan dan Doa -->
+                    <div class="feature-box" data-cat="tamu">
+                        <div class="feature-box-top">
+                            <div class="feature-icon-wrap icon-blue"><i class="fas fa-comments"></i></div>
+                            <span class="feature-num">04</span>
                         </div>
-                        <p>Tampilkan album foto kenangan terbaik kualitas jernih dan sematkan video sinematik prewedding romantis.</p>
+                        <div class="feature-box-content">
+                            <span class="feature-badge-mini badge-blue">Buku Tamu Online</span>
+                            <h4>Ucapan dan Doa</h4>
+                            <p>Buku tamu interaktif tempat keluarga dan para sahabat memberikan ucapan selamat serta doa restu yang tulus.</p>
+                        </div>
                     </div>
 
-                    <!-- 5. Countdown Acara -->
-                    <div class="feature-box">
-                        <div class="feature-box-header">
-                            <div class="feature-icon-wrap"><i class="fas fa-stopwatch"></i></div>
-                            <div>
-                                <h4>Countdown Acara</h4>
-                                <span class="feature-badge-mini">Otomatis</span>
-                            </div>
+                    <!-- 5. Gallery Foto dan Video -->
+                    <div class="feature-box" data-cat="media">
+                        <div class="feature-box-top">
+                            <div class="feature-icon-wrap icon-gold"><i class="fas fa-photo-film"></i></div>
+                            <span class="feature-num">05</span>
                         </div>
-                        <p>Penghitung mundur waktu otomatis yang presisi menuju momen sakral akad nikah dan resepsi pernikahan Anda.</p>
+                        <div class="feature-box-content">
+                            <span class="feature-badge-mini badge-gold">Kualitas HD</span>
+                            <h4>Gallery Foto dan Video</h4>
+                            <p>Tampilkan album foto kenangan terbaik kualitas jernih dan sematkan video sinematik prewedding romantis.</p>
+                        </div>
                     </div>
 
-                    <!-- 6. Amplop Digital -->
-                    <div class="feature-box">
-                        <div class="feature-box-header">
-                            <div class="feature-icon-wrap"><i class="fas fa-wallet"></i></div>
-                            <div>
-                                <h4>Amplop Digital</h4>
-                                <span class="feature-badge-mini">0% Potongan</span>
-                            </div>
+                    <!-- 6. Love Story -->
+                    <div class="feature-box" data-cat="media">
+                        <div class="feature-box-top">
+                            <div class="feature-icon-wrap icon-gold"><i class="fas fa-heart-pulse"></i></div>
+                            <span class="feature-num">06</span>
                         </div>
-                        <p>Fasilitasi tamu yang ingin mengirim kado cashless via transfer rekening atau QRIS tanpa potongan sepeser pun.</p>
+                        <div class="feature-box-content">
+                            <span class="feature-badge-mini badge-gold">Linimasa Kisah</span>
+                            <h4>Love Story</h4>
+                            <p>Bagikan perjalanan cinta manis Anda berdua, mulai dari awal perjumpaan, komitmen, hingga menuju pelaminan suci.</p>
+                        </div>
                     </div>
 
-                    <!-- 7. Ucapan dan Doa -->
-                    <div class="feature-box">
-                        <div class="feature-box-header">
-                            <div class="feature-icon-wrap"><i class="fas fa-comments"></i></div>
-                            <div>
-                                <h4>Ucapan dan Doa</h4>
-                                <span class="feature-badge-mini">Buku Tamu</span>
-                            </div>
+                    <!-- 7. Free Request Backsound -->
+                    <div class="feature-box" data-cat="media">
+                        <div class="feature-box-top">
+                            <div class="feature-icon-wrap icon-gold"><i class="fas fa-music"></i></div>
+                            <span class="feature-num">07</span>
                         </div>
-                        <p>Buku tamu interaktif tempat keluarga dan para sahabat memberikan ucapan selamat serta doa restu yang tulus.</p>
+                        <div class="feature-box-content">
+                            <span class="feature-badge-mini badge-gold">Autoplay Bebas</span>
+                            <h4>Free Request Backsound</h4>
+                            <p>Bebas memilih lagu romantis kenangan favorit Anda berdua untuk mengiringi tamu saat membuka undangan online.</p>
+                        </div>
                     </div>
 
-                    <!-- 8. Love Story -->
-                    <div class="feature-box">
-                        <div class="feature-box-header">
-                            <div class="feature-icon-wrap"><i class="fas fa-heart-pulse"></i></div>
-                            <div>
-                                <h4>Love Story</h4>
-                                <span class="feature-badge-mini">Linimasa Kisah</span>
-                            </div>
+                    <!-- 8. Ayat Pernikahan -->
+                    <div class="feature-box" data-cat="media">
+                        <div class="feature-box-top">
+                            <div class="feature-icon-wrap icon-gold"><i class="fas fa-book-open-reader"></i></div>
+                            <span class="feature-num">08</span>
                         </div>
-                        <p>Bagikan perjalanan cinta manis Anda berdua, mulai dari awal perjumpaan, komitmen, hingga menuju pelaminan suci.</p>
+                        <div class="feature-box-content">
+                            <span class="feature-badge-mini badge-gold">Sakral &amp; Religius</span>
+                            <h4>Ayat Pernikahan</h4>
+                            <p>Penyematan kutipan ayat suci Al-Qur'an (cth. Ar-Rum: 21), Alkitab, atau kata mutiara pernikahan sakral &amp; religius.</p>
+                        </div>
                     </div>
 
-                    <!-- 9. Navigasi Maps -->
-                    <div class="feature-box">
-                        <div class="feature-box-header">
-                            <div class="feature-icon-wrap"><i class="fas fa-map-location-dot"></i></div>
-                            <div>
-                                <h4>Navigasi Maps</h4>
-                                <span class="feature-badge-mini">Presisi</span>
-                            </div>
+                    <!-- 9. Countdown Acara -->
+                    <div class="feature-box" data-cat="acara">
+                        <div class="feature-box-top">
+                            <div class="feature-icon-wrap icon-emerald"><i class="fas fa-stopwatch"></i></div>
+                            <span class="feature-num">09</span>
                         </div>
-                        <p>Terintegrasi Google Maps satu klik untuk memandu rute perjalanan tamu undangan langsung sampai ke lokasi acara.</p>
+                        <div class="feature-box-content">
+                            <span class="feature-badge-mini badge-emerald">Otomatis Presisi</span>
+                            <h4>Countdown Acara</h4>
+                            <p>Penghitung mundur waktu otomatis yang presisi menuju momen sakral akad nikah dan resepsi pernikahan Anda.</p>
+                        </div>
                     </div>
 
-                    <!-- 10. Free Request Backsound -->
-                    <div class="feature-box">
-                        <div class="feature-box-header">
-                            <div class="feature-icon-wrap"><i class="fas fa-music"></i></div>
-                            <div>
-                                <h4>Free Request Backsound</h4>
-                                <span class="feature-badge-mini">Autoplay</span>
-                            </div>
+                    <!-- 10. Amplop Digital -->
+                    <div class="feature-box" data-cat="acara">
+                        <div class="feature-box-top">
+                            <div class="feature-icon-wrap icon-emerald"><i class="fas fa-wallet"></i></div>
+                            <span class="feature-num">10</span>
                         </div>
-                        <p>Bebas memilih lagu romantis kenangan favorit Anda berdua untuk mengiringi tamu saat membuka undangan online.</p>
+                        <div class="feature-box-content">
+                            <span class="feature-badge-mini badge-emerald">0% Potongan</span>
+                            <h4>Amplop Digital</h4>
+                            <p>Fasilitasi tamu yang ingin mengirim kado cashless via transfer rekening atau QRIS tanpa potongan sepeser pun.</p>
+                        </div>
                     </div>
 
-                    <!-- 11. Live Streaming -->
-                    <div class="feature-box">
-                        <div class="feature-box-header">
-                            <div class="feature-icon-wrap"><i class="fas fa-video"></i></div>
-                            <div>
-                                <h4>Live Streaming</h4>
-                                <span class="feature-badge-mini">Online Link</span>
-                            </div>
+                    <!-- 11. Navigasi Maps -->
+                    <div class="feature-box" data-cat="acara">
+                        <div class="feature-box-top">
+                            <div class="feature-icon-wrap icon-emerald"><i class="fas fa-map-location-dot"></i></div>
+                            <span class="feature-num">11</span>
                         </div>
-                        <p>Tombol tautan siaran langsung (YouTube, Zoom, Instagram Live) bagi kerabat yang berhalangan hadir langsung di lokasi.</p>
+                        <div class="feature-box-content">
+                            <span class="feature-badge-mini badge-emerald">Google Maps</span>
+                            <h4>Navigasi Maps</h4>
+                            <p>Terintegrasi Google Maps satu klik untuk memandu rute perjalanan tamu undangan langsung sampai ke lokasi acara.</p>
+                        </div>
                     </div>
 
-                    <!-- 12. Google Calendar -->
-                    <div class="feature-box">
-                        <div class="feature-box-header">
-                            <div class="feature-icon-wrap"><i class="fas fa-calendar-check"></i></div>
-                            <div>
-                                <h4>Google Calendar</h4>
-                                <span class="feature-badge-mini">Pengingat</span>
-                            </div>
+                    <!-- 12. Live Streaming -->
+                    <div class="feature-box" data-cat="acara">
+                        <div class="feature-box-top">
+                            <div class="feature-icon-wrap icon-emerald"><i class="fas fa-video"></i></div>
+                            <span class="feature-num">12</span>
                         </div>
-                        <p>Sinkronisasi tanggal pernikahan ke Google Calendar tamu dengan satu klik agar jadwal tidak terlewatkan.</p>
+                        <div class="feature-box-content">
+                            <span class="feature-badge-mini badge-emerald">Broadcast Link</span>
+                            <h4>Live Streaming</h4>
+                            <p>Tombol tautan siaran langsung (YouTube, Zoom, Instagram Live) bagi kerabat yang berhalangan hadir langsung di lokasi.</p>
+                        </div>
                     </div>
 
-                    <!-- 13. Ayat Pernikahan -->
-                    <div class="feature-box">
-                        <div class="feature-box-header">
-                            <div class="feature-icon-wrap"><i class="fas fa-book-open-reader"></i></div>
-                            <div>
-                                <h4>Ayat Pernikahan</h4>
-                                <span class="feature-badge-mini">Sakral</span>
-                            </div>
+                    <!-- 13. Google Calendar -->
+                    <div class="feature-box" data-cat="acara">
+                        <div class="feature-box-top">
+                            <div class="feature-icon-wrap icon-emerald"><i class="fas fa-calendar-check"></i></div>
+                            <span class="feature-num">13</span>
                         </div>
-                        <p>Penyematan kutipan ayat suci Al-Qur'an (cth. Ar-Rum: 21), Alkitab, atau kata mutiara pernikahan sakral &amp; religius.</p>
+                        <div class="feature-box-content">
+                            <span class="feature-badge-mini badge-emerald">Auto Reminder</span>
+                            <h4>Google Calendar</h4>
+                            <p>Sinkronisasi tanggal pernikahan ke Google Calendar tamu dengan satu klik agar jadwal tidak terlewatkan.</p>
+                        </div>
                     </div>
 
                     <!-- 14. Free Revisi -->
-                    <div class="feature-box">
-                        <div class="feature-box-header">
-                            <div class="feature-icon-wrap"><i class="fas fa-rotate-left"></i></div>
-                            <div>
-                                <h4>Free Revisi</h4>
-                                <span class="feature-badge-mini">Garansi</span>
-                            </div>
+                    <div class="feature-box" data-cat="acara">
+                        <div class="feature-box-top">
+                            <div class="feature-icon-wrap icon-emerald"><i class="fas fa-rotate-left"></i></div>
+                            <span class="feature-num">14</span>
                         </div>
-                        <p>Layanan revisi perubahan data teks, penambahan foto, koreksi waktu atau lokasi acara hingga hari H tanpa rasa cemas.</p>
+                        <div class="feature-box-content">
+                            <span class="feature-badge-mini badge-emerald">Garansi Sampai Hari H</span>
+                            <h4>Free Revisi</h4>
+                            <p>Layanan revisi perubahan data teks, penambahan foto, koreksi waktu atau lokasi acara hingga hari H tanpa rasa cemas.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -2948,7 +3183,7 @@
         <!-- 5. KATALOG TEMA (#tema) - CARD TETAP ADA DENGAN MOCKUP NATURAL -->
         <section class="section-block" id="tema">
             <div class="section-header-center">
-                <div class="pill-badge"><i class="fas fa-border-all"></i> <span id="theme-count">17</span> Tema Pilihan
+                <div class="pill-badge"><i class="fas fa-border-all"></i> <span id="theme-count">21</span> Tema Pilihan
                 </div>
                 <h2 class="section-h2">Pilih Desain Undangan <em>Impianmu</em></h2>
                 <p class="section-sub">Eksplorasi koleksi template dengan identitas visual khas adat nusantara, dark
@@ -3053,7 +3288,7 @@
                         <li><i class="fas fa-check"></i> Navigasi Maps &amp; Live Streaming Link</li>
                         <li><i class="fas fa-check"></i> Free Request Backsound Favorit</li>
                         <li><i class="fas fa-check"></i> Ayat Pernikahan &amp; Free Revisi</li>
-                        <li><i class="fas fa-check"></i> <strong>Masa Aktif SELAMANYA &amp; Bebas 17 Tema</strong></li>
+                        <li><i class="fas fa-check"></i> <strong>Masa Aktif SELAMANYA &amp; Bebas 21 Tema</strong></li>
                     </ul>
                 </div>
 
@@ -3556,6 +3791,78 @@
                 priceRegular: 'Rp 198.000',
                 pricePromo: 'Rp 99.000',
                 discount: 'Disc 50%'
+            },
+            {
+                id: 'blush-bloom',
+                title: 'Blush Bloom',
+                tagline: 'Watercolor Blush Pink & Buket Peony Romantis',
+                category: 'editorial',
+                categoryName: 'Editorial & Paper',
+                desc: 'Sapuan cat air blush pink lembut dengan ilustrasi buket mawar & peony, ranting emas tipis, serta bingkai foto tepi kuas artistik.',
+                thumb: './asset/img/pre5.jpeg',
+                thumb2: './asset/img/pre1.jpeg',
+                thumb3: './asset/img/pre4.jpeg',
+                path: 'themes/blush-bloom/index.html',
+                palette: ['#f6dadf', '#b25a74', '#7a3d55', '#c9a227'],
+                vibeIcon: 'fa-seedling',
+                tags: ['Watercolor Blush', 'Peony & Rose', 'Brush Stroke', 'Romantic Floral'],
+                priceRegular: 'Rp 198.000',
+                pricePromo: 'Rp 99.000',
+                discount: 'Disc 50%'
+            },
+            {
+                id: 'golden-regeria',
+                title: 'Golden Regalia',
+                tagline: 'Art Deco Hitam Hangat & Kilau Emas Foil Metalik',
+                category: 'luxury',
+                categoryName: 'Dark & Luxury',
+                desc: 'Kemegahan Art Deco hitam hangat dengan ornamen sunburst geometris, gerbang istana terbuka, kilau emas foil metalik, dan taburan glitter.',
+                thumb: './asset/img/pre3.jpeg',
+                thumb2: './asset/img/pre9.jpeg',
+                thumb3: './asset/img/pre6.jpeg',
+                path: 'themes/golden-regeria/index.html',
+                palette: ['#0c0905', '#211810', '#d9b25f', '#f3d98f'],
+                vibeIcon: 'fa-crown',
+                tags: ['Art Deco Sunburst', 'Gold Foil Metallic', 'Royal Gate', 'Glitter Luxury'],
+                priceRegular: 'Rp 249.000',
+                pricePromo: 'Rp 129.000',
+                discount: 'Disc 48%'
+            },
+            {
+                id: 'midnight-sapphire',
+                title: 'Midnight Sapphire',
+                tagline: 'Biru Safir Malam & Minimalis Glassmorphism Emas',
+                category: 'luxury',
+                categoryName: 'Dark & Luxury',
+                desc: 'Elegansi biru safir malam pekat berpadu kartu kaca glassmorphism minimalis, bingkai lengkung arch keemasan, dan tipografi kaligrafi mewah.',
+                thumb: './asset/img/pre6.jpeg',
+                thumb2: './asset/img/pre2.jpeg',
+                thumb3: './asset/img/pre8.jpeg',
+                path: 'themes/midnight-sapphire/index.html',
+                palette: ['#0d1423', '#1a2a42', '#d4af37', '#f8fafc'],
+                vibeIcon: 'fa-gem',
+                tags: ['Sapphire Blue', 'Gold Elegance', 'Glassmorphism', 'Arch Minimalist'],
+                priceRegular: 'Rp 249.000',
+                pricePromo: 'Rp 129.000',
+                discount: 'Disc 48%'
+            },
+            {
+                id: 'sage-green',
+                title: 'Sage Green Botanical',
+                tagline: 'Hijau Sage Organik & Sentuhan Emas Hangat',
+                category: 'nature',
+                categoryName: 'Tropical & Boho',
+                desc: 'Nuansa organik hijau sage yang menenangkan dengan ilustrasi dedaunan botani halus, semburat blush lembut, dan aksen garis emas hangat.',
+                thumb: './asset/img/pre2.jpeg',
+                thumb2: './asset/img/pre7.jpeg',
+                thumb3: './asset/img/pre1.jpeg',
+                path: 'themes/sage-green/index.html',
+                palette: ['#edf3ee', '#608066', '#3b5240', '#c29b38'],
+                vibeIcon: 'fa-leaf',
+                tags: ['Sage Green', 'Botanical Leaf', 'Warm Gold', 'Organic Minimalist'],
+                priceRegular: 'Rp 198.000',
+                pricePromo: 'Rp 99.000',
+                discount: 'Disc 50%'
             }
         ];
 
@@ -3617,16 +3924,13 @@
 
                         <div class="device-switcher" role="tablist">
                             <button type="button" class="dev-tab active" data-device="trio" title="Showcase 3 HP" onclick="switchDevice(this, 'trio')">
-                                <i class="fas fa-layer-group"></i> <span>3x HP</span>
-                            </button>
-                            <button type="button" class="dev-tab" data-device="phone" title="Frame HP" onclick="switchDevice(this, 'phone')">
-                                <i class="fas fa-mobile-screen"></i> <span>HP</span>
+                                <i class="fas fa-mobile-screen"></i>
                             </button>
                             <button type="button" class="dev-tab" data-device="tablet" title="Frame Tab" onclick="switchDevice(this, 'tablet')">
-                                <i class="fas fa-tablet-screen-button"></i> <span>Tab</span>
+                                <i class="fas fa-tablet-screen-button"></i>
                             </button>
                             <button type="button" class="dev-tab" data-device="desktop" title="Frame Laptop" onclick="switchDevice(this, 'desktop')">
-                                <i class="fas fa-laptop"></i> <span>PC</span>
+                                <i class="fas fa-laptop"></i>
                             </button>
                         </div>
 
@@ -3652,20 +3956,6 @@
                                     <div class="phone-island"></div>
                                     <div class="phone-screen">
                                         <img src="${thumbMobile3}" onerror="this.onerror=null; this.src='${theme.thumb3 || theme.thumb}'" alt="${theme.title} HP 3" loading="lazy">
-                                    </div>
-                                    <div class="phone-glare"></div>
-                                    <div class="phone-home-bar"></div>
-                                </div>
-                            </div>
-
-                            <div class="mockup-view view-phone">
-                                <div class="phone-frame phone-single">
-                                    <div class="phone-button btn-vol-up"></div>
-                                    <div class="phone-button btn-vol-down"></div>
-                                    <div class="phone-button btn-power"></div>
-                                    <div class="phone-island"></div>
-                                    <div class="phone-screen">
-                                        <img src="${thumbMobile}" onerror="this.onerror=null; this.src='${theme.thumb}'" alt="${theme.title} Mobile" loading="lazy">
                                     </div>
                                     <div class="phone-glare"></div>
                                     <div class="phone-home-bar"></div>

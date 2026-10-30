@@ -36,6 +36,10 @@ asset/img/thumbnails/
 15. `indigo-bloom/`
 16. `black-diamond/`
 17. `blue-water/`
+18. `blush-bloom/`
+19. `golden-regeria/`
+20. `midnight-sapphire/`
+21. `sage-green/`
 
 ---
 
