@@ -4,35 +4,45 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Undangan Gue - Katalog Tema Web Undangan Pernikahan</title>
-    <meta name="description" content="Koleksi template undangan pernikahan digital eksklusif dengan tema adat nusantara, modern glassmorphism, dan editorial minimalis.">
+    <title>undangan gue - Katalog Tema Web Undangan Pernikahan Digital</title>
+    <meta name="description"
+        content="Koleksi template web undangan pernikahan digital eksklusif dengan tema adat nusantara, modern luxury, dan editorial minimalis.">
     <link rel="icon" type="image/png" href="./asset/img/pre1.jpeg">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Cinzel:wght@600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
         :root {
-            /* Warm Elegant Light Mode Palette */
-            --bg-base: #fbf9f5;
+            /* Clean & Modern Light Palette (Inspired by Reference UI) */
+            --bg-page: #f8fafc;
             --bg-surface: #ffffff;
-            --bg-elevated: #f4efe6;
-            --bg-subtle: #faf6ef;
-            --border-subtle: #e8e2d5;
-            --border-hover: #c59336;
+            --bg-subtle: #f1f5f9;
+            --bg-elevated: #f8fafc;
+            --border-subtle: #e2e8f0;
+            --border-hover: #cbd5e1;
+
+            /* Tasteful Subtle Gold Accent (Not Overwhelming) */
             --gold: #b3822a;
             --gold-light: #dfb253;
-            --gold-gradient: linear-gradient(135deg, #c59336 0%, #e0b85a 50%, #a8761d 100%);
-            --gold-soft-bg: rgba(197, 147, 54, 0.08);
-            --text-main: #1d2129;
-            --text-secondary: #4b5262;
-            --text-muted: #798194;
-            --shadow-sm: 0 4px 14px rgba(45, 35, 20, 0.04);
-            --shadow-md: 0 12px 32px rgba(45, 35, 20, 0.07);
-            --shadow-lg: 0 24px 50px rgba(45, 35, 20, 0.11);
+            --gold-soft-bg: rgba(179, 130, 42, 0.08);
+            --gold-gradient: linear-gradient(135deg, #c59336 0%, #e0b85a 50%, #b3822a 100%);
+
+            /* Text Hierarchy */
+            --text-main: #0f172a;
+            --text-secondary: #475569;
+            --text-muted: #94a3b8;
+
+            /* Shadows & Transitions */
+            --shadow-xs: 0 1px 3px rgba(0, 0, 0, 0.04);
+            --shadow-sm: 0 4px 12px rgba(15, 23, 42, 0.05);
+            --shadow-md: 0 12px 28px rgba(15, 23, 42, 0.08);
+            --shadow-lg: 0 20px 45px rgba(15, 23, 42, 0.12);
             --ease: cubic-bezier(0.16, 1, 0.3, 1);
         }
 
@@ -48,122 +58,78 @@
 
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: var(--bg-base);
+            background-color: var(--bg-page);
             color: var(--text-main);
             min-height: 100vh;
             overflow-x: hidden;
             position: relative;
-            background-image: 
-                radial-gradient(at 0% 0%, rgba(247, 237, 222, 0.7) 0px, transparent 55%),
-                radial-gradient(at 100% 10%, rgba(243, 231, 218, 0.6) 0px, transparent 50%),
-                radial-gradient(at 50% 100%, rgba(244, 233, 224, 0.7) 0px, transparent 60%);
-        }
-
-        /* Subtle Light Decorative Glow */
-        .ambient-glow {
-            position: fixed;
-            width: 75vw;
-            height: 75vw;
-            max-width: 900px;
-            max-height: 900px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(224, 184, 90, 0.12) 0%, rgba(251, 249, 245, 0) 70%);
-            top: -250px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 0;
-            pointer-events: none;
-            filter: blur(70px);
+            background-image:
+                radial-gradient(at 50% 0%, rgba(224, 242, 254, 0.5) 0px, transparent 65%),
+                radial-gradient(at 100% 15%, rgba(254, 243, 199, 0.3) 0px, transparent 50%),
+                radial-gradient(at 0% 30%, rgba(241, 245, 249, 0.8) 0px, transparent 60%);
         }
 
         .container {
             width: 100%;
-            max-width: 1320px;
+            max-width: 1220px;
             margin: 0 auto;
             padding: 0 1.5rem;
             position: relative;
-            z-index: 1;
         }
 
         /* ========================================================
-           MODERN FLOATING & RESPONSIVE NAVBAR
+           CLEAN FULL-WIDTH NAVBAR (PERSIS GAMBAR REFERENSI USER)
            ======================================================== */
-        .header-floating {
+        .site-header {
             position: sticky;
-            top: 14px;
+            top: 0;
             z-index: 1000;
             width: 100%;
-            transition: all 0.35s var(--ease);
-            padding: 0 0.25rem;
-        }
-
-        .header-floating.scrolled .nav-shell {
-            background: rgba(255, 255, 255, 0.94);
-            box-shadow: 0 16px 40px rgba(45, 35, 20, 0.12), 0 2px 8px rgba(45, 35, 20, 0.04);
-            border-color: rgba(197, 147, 54, 0.3);
-            padding-top: 7px;
-            padding-bottom: 7px;
-        }
-
-        .nav-shell {
-            background: rgba(255, 255, 255, 0.86);
+            background: rgba(255, 255, 255, 0.92);
             backdrop-filter: blur(20px) saturate(180%);
             -webkit-backdrop-filter: blur(20px) saturate(180%);
-            border: 1px solid rgba(225, 215, 200, 0.85);
-            border-radius: 999px;
-            padding: 8px 12px 8px 16px;
-            box-shadow: 0 10px 32px rgba(45, 35, 20, 0.06), 0 2px 6px rgba(45, 35, 20, 0.02);
+            border-bottom: 1px solid var(--border-subtle);
+            transition: all 0.3s var(--ease);
+        }
+
+        .site-header.scrolled {
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 4px 20px rgba(15, 23, 42, 0.06);
+        }
+
+        .nav-inner {
+            height: 74px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            position: relative;
-            transition: all 0.35s var(--ease);
         }
 
-        /* Brand Styling */
+        /* Brand Logo (Paling Kiri) */
         .brand {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
             text-decoration: none;
             color: var(--text-main);
             user-select: none;
         }
 
-        .brand-icon-wrapper {
-            position: relative;
-        }
-
         .brand-icon {
-            width: 42px;
-            height: 42px;
-            border-radius: 13px;
-            background: var(--gold-gradient);
+            width: 38px;
+            height: 38px;
+            border-radius: 11px;
+            background: #0f172a;
+            color: #ffffff;
             display: grid;
             place-items: center;
-            color: #ffffff;
-            font-size: 1.15rem;
-            box-shadow: 0 6px 16px rgba(179, 130, 42, 0.32);
-            transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+            font-size: 1rem;
+            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
+            transition: transform 0.25s var(--ease);
         }
 
         .brand:hover .brand-icon {
-            transform: scale(1.05) rotate(-3deg);
-            box-shadow: 0 8px 22px rgba(179, 130, 42, 0.45);
-        }
-
-        .brand-sparkle {
-            position: absolute;
-            top: -4px;
-            right: -4px;
-            color: var(--gold);
-            font-size: 0.65rem;
-            animation: pulse-sparkle 2.2s infinite;
-        }
-
-        @keyframes pulse-sparkle {
-            0%, 100% { transform: scale(0.9); opacity: 0.6; }
-            50% { transform: scale(1.25); opacity: 1; }
+            transform: scale(1.05);
+            background: var(--gold);
         }
 
         .brand-text {
@@ -172,425 +138,604 @@
             line-height: 1.15;
         }
 
-        .brand-title {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .brand-title span {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.25rem;
-            font-weight: 700;
-            letter-spacing: -0.01em;
+        .brand-name {
+            font-size: 1.15rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
             color: var(--text-main);
         }
 
-        .brand-badge {
-            color: #10b981;
-            font-size: 0.8rem;
-        }
-
-        .brand-sub {
+        .brand-tag {
             font-size: 0.68rem;
             color: var(--gold);
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
             font-weight: 700;
-            margin-top: 1px;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
         }
 
-        /* Center Nav Links (Desktop) */
-        .nav-menu-desktop {
+        /* Center Menu Links (Fitur, Tema, Harga, Kontak) */
+        .nav-links-center {
             display: flex;
             align-items: center;
-            gap: 4px;
-            background: rgba(244, 239, 230, 0.65);
-            padding: 4px;
-            border-radius: 999px;
-            border: 1px solid rgba(225, 215, 200, 0.6);
+            gap: 2rem;
+            list-style: none;
         }
 
-        .nav-link {
+        .nav-item-link {
             text-decoration: none;
             color: var(--text-secondary);
-            font-size: 0.82rem;
+            font-size: 0.92rem;
             font-weight: 600;
-            padding: 7px 15px;
-            border-radius: 999px;
-            transition: all 0.25s var(--ease);
-            display: inline-flex;
-            align-items: center;
-            gap: 7px;
-            white-space: nowrap;
-        }
-
-        .nav-link i {
-            font-size: 0.78rem;
-            color: var(--gold);
-            transition: transform 0.2s;
-        }
-
-        .nav-link:hover {
-            color: var(--text-main);
-            background: #ffffff;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-        }
-
-        .nav-link:hover i {
-            transform: scale(1.15);
-        }
-
-        .nav-link.active {
-            background: #ffffff;
-            color: var(--text-main);
-            box-shadow: 0 2px 8px rgba(45, 35, 20, 0.08);
-        }
-
-        /* Right Actions */
-        .nav-actions {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        /* Live Pulsing Status Chip */
-        .live-status-chip {
-            background: rgba(16, 185, 129, 0.08);
-            border: 1px solid rgba(16, 185, 129, 0.25);
-            color: #065f46;
-            padding: 6px 13px;
-            border-radius: 999px;
-            font-size: 0.76rem;
-            font-weight: 700;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            white-space: nowrap;
-        }
-
-        .status-pulse {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: #10b981;
+            transition: color 0.2s var(--ease);
             position: relative;
-            display: inline-block;
+            padding: 8px 0;
         }
 
-        .status-pulse::after {
+        .nav-item-link:hover,
+        .nav-item-link.active {
+            color: var(--text-main);
+        }
+
+        .nav-item-link.active::after {
             content: '';
             position: absolute;
-            inset: -3px;
-            border-radius: 50%;
-            background: rgba(16, 185, 129, 0.4);
-            animation: pulse-ring 1.8s cubic-bezier(0.25, 1, 0.5, 1) infinite;
-        }
-
-        @keyframes pulse-ring {
-            0% { transform: scale(0.9); opacity: 1; }
-            100% { transform: scale(2.4); opacity: 0; }
-        }
-
-        /* CTA WhatsApp Button */
-        .nav-btn-cta {
-            background: var(--gold-gradient);
-            color: #ffffff;
-            text-decoration: none;
-            font-size: 0.82rem;
-            font-weight: 700;
-            padding: 9px 18px;
-            border-radius: 999px;
-            display: inline-flex;
-            align-items: center;
-            gap: 7px;
-            box-shadow: 0 4px 14px rgba(179, 130, 42, 0.28);
-            transition: all 0.25s var(--ease);
-            white-space: nowrap;
-        }
-
-        .nav-btn-cta i {
-            font-size: 1rem;
-        }
-
-        .nav-btn-cta:hover {
-            filter: brightness(1.08);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(179, 130, 42, 0.38);
-        }
-
-        /* Hamburger Toggle Button */
-        .nav-toggle-btn {
-            display: none;
-            width: 40px;
-            height: 40px;
-            border-radius: 12px;
-            background: var(--bg-elevated);
-            border: 1px solid var(--border-subtle);
-            cursor: pointer;
-            padding: 8px;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: 5px;
-            transition: all 0.25s;
-        }
-
-        .nav-toggle-btn:hover {
-            background: #ffffff;
-            border-color: var(--gold);
-        }
-
-        .hamburger-bar {
-            width: 20px;
+            bottom: 0;
+            left: 0;
+            right: 0;
             height: 2px;
-            background-color: var(--text-main);
+            background: #0f172a;
             border-radius: 2px;
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-            transform-origin: center;
         }
 
-        .nav-toggle-btn.active .hamburger-bar:nth-child(1) {
-            transform: translateY(7px) rotate(45deg);
-        }
-
-        .nav-toggle-btn.active .hamburger-bar:nth-child(2) {
-            opacity: 0;
-            transform: scale(0.2);
-        }
-
-        .nav-toggle-btn.active .hamburger-bar:nth-child(3) {
-            transform: translateY(-7px) rotate(-45deg);
-        }
-
-        /* Mobile Menu Drawer */
-        .mobile-menu-drawer {
-            position: absolute;
-            top: calc(100% + 10px);
-            left: 0.5rem;
-            right: 0.5rem;
-            background: rgba(255, 255, 255, 0.96);
-            backdrop-filter: blur(24px) saturate(180%);
-            -webkit-backdrop-filter: blur(24px) saturate(180%);
-            border: 1px solid rgba(225, 215, 200, 0.9);
-            border-radius: 24px;
-            padding: 16px;
-            box-shadow: 0 20px 50px rgba(45, 35, 20, 0.15);
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(-12px) scale(0.98);
-            transition: all 0.3s var(--ease);
-            pointer-events: none;
-        }
-
-        .mobile-menu-drawer.active {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0) scale(1);
-            pointer-events: auto;
-        }
-
-        .mobile-menu-header {
-            padding-bottom: 12px;
-            margin-bottom: 12px;
-            border-bottom: 1px solid var(--border-subtle);
-        }
-
-        .mobile-guest-badge {
-            background: var(--bg-elevated);
-            padding: 8px 14px;
-            border-radius: 12px;
-            font-size: 0.78rem;
-            color: var(--text-secondary);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .mobile-guest-badge strong {
-            color: var(--gold);
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-        }
-
-        .mobile-nav-links {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            margin-bottom: 14px;
-        }
-
-        .mobile-link {
-            text-decoration: none;
-            padding: 10px 12px;
-            border-radius: 14px;
+        /* Right Actions (Daftar / Masuk Button) */
+        .nav-right-actions {
             display: flex;
             align-items: center;
             gap: 12px;
-            background: var(--bg-surface);
-            border: 1px solid var(--border-subtle);
-            transition: all 0.2s;
         }
 
-        .mobile-link:hover, .mobile-link:active {
-            background: #faf7f2;
-            border-color: var(--gold-light);
-            transform: translateX(3px);
-        }
-
-        .mobile-link-icon {
-            width: 38px;
-            height: 38px;
-            border-radius: 11px;
-            background: var(--gold-soft-bg);
-            color: var(--gold);
-            display: grid;
-            place-items: center;
-            font-size: 0.95rem;
-            flex-shrink: 0;
-        }
-
-        .mobile-link-text {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            text-align: left;
-        }
-
-        .mobile-link-text strong {
-            font-size: 0.88rem;
-            color: var(--text-main);
-        }
-
-        .mobile-link-text span {
-            font-size: 0.74rem;
-            color: var(--text-muted);
-            margin-top: 1px;
-        }
-
-        .mobile-link-arrow {
-            color: #b5bcc9;
-            font-size: 0.75rem;
-        }
-
-        .mobile-menu-footer {
-            padding-top: 4px;
-        }
-
-        .mobile-btn-cta {
-            background: var(--gold-gradient);
+        .btn-nav-primary {
+            background: #0f172a;
             color: #ffffff;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            padding: 12px;
-            border-radius: 14px;
+            border: none;
+            cursor: pointer;
+            font-size: 0.88rem;
             font-weight: 700;
-            font-size: 0.9rem;
-            box-shadow: 0 4px 16px rgba(179, 130, 42, 0.3);
-        }
-
-        /* Responsive Breakpoints for Navbar */
-        @media (max-width: 1080px) {
-            .nav-menu-desktop {
-                display: none;
-            }
-            .nav-toggle-btn {
-                display: flex;
-            }
-        }
-
-        @media (max-width: 640px) {
-            .nav-btn-cta {
-                display: none;
-            }
-            .live-status-chip {
-                padding: 5px 9px;
-                font-size: 0.72rem;
-            }
-            .brand-title span {
-                font-size: 1.1rem;
-            }
-            .brand-icon {
-                width: 38px;
-                height: 38px;
-                font-size: 1rem;
-            }
-        }
-
-        /* Hero Showcase */
-        .hero {
-            padding: 4.5rem 0 2.8rem;
-            text-align: center;
-        }
-
-        .hero-chip {
+            padding: 10px 22px;
+            border-radius: 999px;
+            text-decoration: none;
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            padding: 7px 18px;
+            transition: all 0.25s var(--ease);
+            box-shadow: 0 4px 14px rgba(15, 23, 42, 0.15);
+        }
+
+        .btn-nav-primary:hover {
+            background: var(--gold);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(179, 130, 42, 0.3);
+            color: #ffffff;
+        }
+
+        /* Mobile Hamburger Toggle */
+        .nav-mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            color: var(--text-main);
+            font-size: 1.3rem;
+        }
+
+        /* Mobile Dropdown Drawer */
+        .mobile-drawer {
+            display: none;
+            position: absolute;
+            top: 74px;
+            left: 0;
+            right: 0;
+            background: #ffffff;
+            border-bottom: 1px solid var(--border-subtle);
+            padding: 1.2rem 1.5rem;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .mobile-drawer.active {
+            display: flex;
+        }
+
+        .mobile-drawer-link {
+            text-decoration: none;
+            color: var(--text-main);
+            font-size: 1rem;
+            font-weight: 600;
+            padding: 8px 0;
+            border-bottom: 1px solid var(--border-subtle);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* ========================================================
+           HERO SECTION (PERSIS LAYOUT GAMBAR REFERENSI USER)
+           ======================================================== */
+        .hero-section {
+            padding: 4.5rem 0 3.5rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .pill-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 16px;
             border-radius: 999px;
             background: #ffffff;
             border: 1px solid var(--border-subtle);
+            color: var(--text-secondary);
             font-size: 0.8rem;
             font-weight: 600;
-            color: var(--gold);
+            box-shadow: var(--shadow-xs);
             margin-bottom: 1.5rem;
-            box-shadow: var(--shadow-sm);
         }
 
-        .hero h2 {
+        .pill-badge i {
+            color: var(--gold);
+        }
+
+        .hero-title {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(2.4rem, 5.5vw, 4rem);
+            font-size: clamp(2.4rem, 5.2vw, 4.2rem);
             font-weight: 700;
-            line-height: 1.18;
+            line-height: 1.16;
+            color: #0f172a;
             letter-spacing: -0.02em;
             margin-bottom: 1.2rem;
-            color: #171a21;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        .hero h2 em {
+        .hero-title em {
             font-style: italic;
-            background: var(--gold-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: var(--gold);
         }
 
-        .hero p {
+        .hero-desc {
             color: var(--text-secondary);
             font-size: 1.08rem;
             max-width: 680px;
             margin: 0 auto 2.5rem;
-            line-height: 1.7;
+            line-height: 1.65;
         }
 
-        /* Guest Parameter Customizer Box */
-        .guest-box {
-            max-width: 620px;
-            margin: 0 auto;
+        /* Center Hero Phone Mockup with Floating Widgets (Persis Gambar) */
+        .hero-showcase-wrap {
+            position: relative;
+            max-width: 420px;
+            margin: 0 auto 3.5rem;
+        }
+
+        .hero-phone-center {
+            background: #0f172a;
+            border-radius: 46px;
+            padding: 12px;
+            box-shadow: 0 25px 60px -15px rgba(15, 23, 42, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.8);
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-phone-screen {
+            border-radius: 36px;
+            overflow: hidden;
+            position: relative;
+            aspect-ratio: 9/18;
             background: #ffffff;
-            border: 1.5px solid var(--border-subtle);
-            border-radius: 20px;
-            padding: 8px 10px 8px 20px;
+        }
+
+        .hero-phone-screen img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Floating UI Widget Left (Review / Social Proof) */
+        .floating-widget-left {
+            position: absolute;
+            left: -130px;
+            top: 25%;
+            background: #ffffff;
+            border: 1px solid var(--border-subtle);
+            border-radius: 18px;
+            padding: 14px 18px;
+            box-shadow: 0 16px 36px rgba(15, 23, 42, 0.12);
+            z-index: 3;
+            text-align: left;
             display: flex;
             align-items: center;
             gap: 12px;
+            animation: float-left 4s ease-in-out infinite;
+        }
+
+        @keyframes float-left {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-8px);
+            }
+        }
+
+        .stars-row {
+            color: #f59e0b;
+            font-size: 0.75rem;
+            margin-bottom: 2px;
+        }
+
+        .widget-val {
+            font-weight: 800;
+            font-size: 1.1rem;
+            color: var(--text-main);
+            line-height: 1;
+        }
+
+        .widget-sub {
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        /* Floating UI Widget Right (Amplop Digital / Transfer) */
+        .floating-widget-right {
+            position: absolute;
+            right: -130px;
+            top: 45%;
+            background: #ffffff;
+            border: 1px solid var(--border-subtle);
+            border-radius: 18px;
+            padding: 14px 18px;
+            box-shadow: 0 16px 36px rgba(15, 23, 42, 0.12);
+            z-index: 3;
+            text-align: left;
+            animation: float-right 4.5s ease-in-out infinite;
+        }
+
+        @keyframes float-right {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(8px);
+            }
+        }
+
+        .widget-badge-pill {
+            background: #ecfdf5;
+            color: #059669;
+            font-size: 0.68rem;
+            font-weight: 700;
+            padding: 3px 8px;
+            border-radius: 6px;
+            display: inline-block;
+            margin-bottom: 4px;
+        }
+
+        .widget-amount {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: #0f172a;
+        }
+
+        .widget-note {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+        }
+
+        /* Partners / Features Bar Below Hero (Persis Gambar) */
+        .partner-bar {
+            padding: 2rem 0;
+            border-top: 1px solid var(--border-subtle);
+            border-bottom: 1px solid var(--border-subtle);
+            margin-bottom: 4rem;
+        }
+
+        .partner-label {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-weight: 700;
+            margin-bottom: 1.2rem;
+            text-align: center;
+        }
+
+        .partner-logos {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2.8rem;
+            flex-wrap: wrap;
+            opacity: 0.75;
+        }
+
+        .partner-logo-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 700;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .partner-logo-item i {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+        }
+
+        /* ========================================================
+           SECTION 2: 3 FOLDER-STYLE BENTO CARDS (PERSIS GAMBAR)
+           ======================================================== */
+        .section-block {
+            padding: 4rem 0;
+            scroll-margin-top: 90px;
+        }
+
+        .section-header-center {
+            text-align: center;
+            max-width: 680px;
+            margin: 0 auto 3rem;
+        }
+
+        .section-h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.9rem, 3.8vw, 2.7rem);
+            font-weight: 700;
+            color: #0f172a;
+            margin: 0.6rem 0 0.8rem;
+            line-height: 1.25;
+        }
+
+        .section-sub {
+            color: var(--text-secondary);
+            font-size: 0.98rem;
+            line-height: 1.6;
+        }
+
+        .bento-3-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.8rem;
+        }
+
+        .bento-card {
+            background: #ffffff;
+            border: 1px solid var(--border-subtle);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s var(--ease);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .bento-card:hover {
+            transform: translateY(-5px);
             box-shadow: var(--shadow-md);
-            transition: all 0.3s;
+            border-color: #cbd5e1;
         }
 
-        .guest-box:focus-within {
-            border-color: var(--gold);
-            box-shadow: 0 14px 35px rgba(197, 147, 54, 0.16);
-            transform: translateY(-2px);
+        .bento-card-top {
+            background: #f1f5f9;
+            padding: 2.2rem 1.8rem 1.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 170px;
+            position: relative;
         }
 
-        .guest-box i.guest-icon {
-            color: var(--gold);
+        .bento-top-1 {
+            background: linear-gradient(180deg, #e0f2fe 0%, #f0f9ff 100%);
+        }
+
+        .bento-top-2 {
+            background: linear-gradient(180deg, #fef3c7 0%, #fffbeb 100%);
+        }
+
+        .bento-top-3 {
+            background: linear-gradient(180deg, #dcfce7 0%, #f0fdf4 100%);
+        }
+
+        .bento-mini-mockup {
+            background: #ffffff;
+            border-radius: 14px;
+            padding: 12px 16px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            width: 100%;
+            max-width: 220px;
+            text-align: center;
+        }
+
+        .bento-card-body {
+            padding: 1.8rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .bento-card-body h3 {
             font-size: 1.15rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 0.6rem;
+        }
+
+        .bento-card-body p {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* ========================================================
+           SECTION 3 & 4: 2-COLUMN SPLIT SHOWCASE (PERSIS GAMBAR)
+           ======================================================== */
+        .split-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin: 4rem 0;
+        }
+
+        .split-text {
+            text-align: left;
+        }
+
+        .split-h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.8rem, 3.2vw, 2.5rem);
+            font-weight: 700;
+            color: #0f172a;
+            margin: 0.6rem 0 1rem;
+            line-height: 1.25;
+        }
+
+        .split-p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.65;
+            margin-bottom: 1.8rem;
+        }
+
+        .split-check-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            margin-bottom: 2rem;
+        }
+
+        .split-check-list li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            font-weight: 600;
+        }
+
+        .split-check-list li i {
+            color: #0284c7;
+            font-size: 1rem;
+        }
+
+        .btn-split-cta {
+            background: #0f172a;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 12px 26px;
+            border-radius: 999px;
+            font-weight: 700;
+            font-size: 0.92rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.25s;
+        }
+
+        .btn-split-cta:hover {
+            background: var(--gold);
+            transform: translateY(-2px);
+            color: #ffffff;
+        }
+
+        /* Social Proof Card with Avatars */
+        .social-proof-bar {
+            background: #ffffff;
+            border: 1px solid var(--border-subtle);
+            border-radius: 16px;
+            padding: 12px 16px;
+            display: inline-flex;
+            align-items: center;
+            gap: 14px;
+            box-shadow: var(--shadow-xs);
+            margin-bottom: 1.8rem;
+        }
+
+        .avatars-overlap {
+            display: flex;
+            align-items: center;
+        }
+
+        .avatar-circle {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            border: 2px solid #ffffff;
+            margin-left: -8px;
+            object-fit: cover;
+        }
+
+        .avatar-circle:first-child {
+            margin-left: 0;
+        }
+
+        .social-text {
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+            font-weight: 600;
+        }
+
+        .social-text strong {
+            color: var(--text-main);
+        }
+
+        /* Split Visual Showcase Containers */
+        .split-visual-card {
+            background: #ffffff;
+            border: 1px solid var(--border-subtle);
+            border-radius: 28px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow-md);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .split-img-main {
+            width: 100%;
+            height: 320px;
+            border-radius: 20px;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* ========================================================
+           KATALOG TEMA SECTION (#tema)
+           ======================================================== */
+        .guest-box {
+            max-width: 580px;
+            margin: 0 auto 2.2rem;
+            background: #ffffff;
+            border: 1px solid var(--border-subtle);
+            border-radius: 18px;
+            padding: 8px 10px 8px 18px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: var(--shadow-sm);
         }
 
         .guest-input-wrap {
@@ -601,212 +746,561 @@
         }
 
         .guest-input-wrap label {
-            font-size: 0.68rem;
-            text-transform: uppercase;
-            letter-spacing: 0.06em;
-            color: var(--text-muted);
+            font-size: 0.72rem;
             font-weight: 700;
-            margin-bottom: 2px;
+            color: var(--text-muted);
+            text-transform: uppercase;
         }
 
-        .guest-box input {
-            width: 100%;
-            background: transparent;
+        .guest-input-wrap input {
             border: none;
             outline: none;
-            color: var(--text-main);
             font-family: inherit;
             font-size: 0.95rem;
-            font-weight: 600;
-        }
-
-        .guest-box input::placeholder {
-            color: #a0a6b5;
-            font-weight: 400;
+            font-weight: 700;
+            color: var(--text-main);
+            background: transparent;
         }
 
         .guest-btn-update {
-            background: var(--gold-gradient);
-            border: none;
+            background: #0f172a;
             color: #ffffff;
-            padding: 10px 20px;
-            border-radius: 14px;
-            font-size: 0.85rem;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 12px;
             font-weight: 700;
+            font-size: 0.82rem;
             cursor: pointer;
-            transition: all 0.25s;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            box-shadow: 0 6px 18px rgba(179, 130, 42, 0.25);
+            transition: all 0.2s;
         }
 
         .guest-btn-update:hover {
-            filter: brightness(1.08);
-            transform: translateY(-1px);
+            background: var(--gold);
         }
 
-        /* Filter Tabs */
+        /* Category Filter Tabs */
         .filter-section {
             display: flex;
             align-items: center;
             justify-content: center;
+            gap: 8px;
             flex-wrap: wrap;
-            gap: 10px;
-            margin: 3.2rem 0 2.5rem;
+            margin-bottom: 3rem;
         }
 
         .filter-btn {
             background: #ffffff;
             border: 1px solid var(--border-subtle);
             color: var(--text-secondary);
-            padding: 10px 22px;
-            border-radius: 999px;
-            font-size: 0.88rem;
+            font-family: inherit;
+            font-size: 0.84rem;
             font-weight: 600;
+            padding: 8px 18px;
+            border-radius: 999px;
             cursor: pointer;
-            transition: all 0.3s var(--ease);
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            box-shadow: var(--shadow-sm);
+            transition: all 0.2s;
         }
 
         .filter-btn:hover {
-            color: var(--gold);
-            border-color: var(--gold-light);
-            transform: translateY(-2px);
+            border-color: #0f172a;
+            color: #0f172a;
         }
 
         .filter-btn.active {
-            background: var(--gold-gradient);
+            background: #0f172a;
+            border-color: #0f172a;
             color: #ffffff;
-            font-weight: 700;
-            border-color: transparent;
-            box-shadow: 0 8px 24px rgba(179, 130, 42, 0.35);
         }
 
-        /* Themes Grid */
         .themes-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
             gap: 2.2rem;
-            margin-bottom: 5rem;
         }
 
-        /* Base Theme Card Structure */
         .theme-card {
             background: #ffffff;
+            border: 1px solid var(--border-subtle);
             border-radius: 24px;
             overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.35s var(--ease);
             display: flex;
             flex-direction: column;
-            transition: all 0.4s var(--ease);
-            position: relative;
-            box-shadow: var(--shadow-md);
-            border: 1.5px solid var(--card-border, var(--border-subtle));
         }
 
         .theme-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-lg);
-            border-color: var(--card-border-hover, var(--gold));
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-md);
         }
 
-        /* Card Palette Header Bar */
-        .card-palette-bar {
+        /* ========================================================
+           MOCKUP FRAMES (Trio 3-HP, Single HP, Tablet, Desktop)
+           ======================================================== */
+        .mockup-stage {
+            position: relative;
+            height: 310px;
+            overflow: hidden;
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            padding: 10px 18px;
-            background: var(--card-header-bg, #faf8f4);
+            justify-content: center;
+            background: var(--card-stage-bg, radial-gradient(circle at 50% 25%, #ffffff 0%, #f5f6fa 65%, #eaecf1 100%));
             border-bottom: 1px solid var(--card-inner-border, var(--border-subtle));
+            perspective: 1200px;
+            user-select: none;
         }
 
-        .palette-dots {
-            display: flex;
-            align-items: center;
-            gap: 6px;
+        /* Subtle Studio Dot Grid Texture */
+        .mockup-stage::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(rgba(0, 0, 0, 0.065) 1px, transparent 1px);
+            background-size: 16px 16px;
+            pointer-events: none;
+            opacity: 0.8;
         }
 
-        .palette-dot {
-            width: 13px;
-            height: 13px;
-            border-radius: 50%;
-            border: 1.5px solid rgba(255, 255, 255, 0.8);
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
-        }
-
-        .card-vibe-pill {
-            font-size: 0.7rem;
+        /* Top Left Category Pill */
+        .mockup-pill-badge {
+            position: absolute;
+            top: 12px;
+            left: 14px;
+            z-index: 15;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(10px);
+            color: var(--card-pill-text, #1f2937);
+            font-size: 0.68rem;
             font-weight: 700;
             text-transform: uppercase;
+            letter-spacing: 0.06em;
+            padding: 5px 11px;
+            border-radius: 999px;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* Top Right Discount Corner Ribbon (Like Screenshot) */
+        .mockup-corner-ribbon {
+            position: absolute;
+            top: 18px;
+            right: -38px;
+            width: 140px;
+            transform: rotate(45deg);
+            background: linear-gradient(135deg, #e53935 0%, #c62828 100%);
+            color: #ffffff;
+            font-size: 0.68rem;
+            font-weight: 800;
+            text-transform: uppercase;
             letter-spacing: 0.08em;
-            color: var(--card-pill-text, var(--gold));
+            text-align: center;
+            padding: 5px 0;
+            box-shadow: 0 4px 12px rgba(211, 47, 47, 0.35);
+            z-index: 20;
+            pointer-events: none;
+        }
+
+        /* Device Switcher Bar (HP / Tab / PC) */
+        .device-switcher {
+            position: absolute;
+            bottom: 12px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 18;
+            display: inline-flex;
+            gap: 3px;
+            padding: 3px;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(12px);
+            border-radius: 999px;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+        }
+
+        .dev-tab {
+            border: none;
+            background: transparent;
+            padding: 4px 10px;
+            border-radius: 999px;
+            font-size: 0.66rem;
+            font-weight: 700;
+            color: #64748b;
+            cursor: pointer;
+            transition: all 0.25s var(--ease);
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .dev-tab:hover {
+            color: #0f172a;
+            background: rgba(0, 0, 0, 0.04);
+        }
+
+        .dev-tab.active {
+            background: var(--card-badge-color, #1a1a1c);
+            color: #ffffff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+        }
+
+        /* Mockup Viewport Container */
+        .mockup-viewport {
+            width: 100%;
+            height: 100%;
+            position: relative;
             display: flex;
             align-items: center;
-            gap: 6px;
+            justify-content: center;
         }
 
-        /* Card Thumbnail */
-        .card-thumb {
+        .mockup-view {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transform: scale(0.96);
+            transition: opacity 0.35s var(--ease), transform 0.35s var(--ease);
+        }
+
+        .mockup-view.active {
+            opacity: 1;
+            pointer-events: all;
+            transform: scale(1);
+        }
+
+        /* ==================== 1. SMARTPHONE (HP) FRAME ==================== */
+        .phone-frame {
             position: relative;
-            aspect-ratio: 16 / 10;
+            border-radius: 26px;
+            background: #1e1e24;
+            border: 3.5px solid #2e2e36;
+            box-shadow:
+                0 0 0 1px rgba(255, 255, 255, 0.15) inset,
+                0 18px 36px -8px rgba(0, 0, 0, 0.35);
             overflow: hidden;
-            background: #eeeae3;
+            display: flex;
+            flex-direction: column;
+            transform-style: preserve-3d;
         }
 
-        .card-thumb img {
+        .phone-screen {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            border-radius: 22px;
+            overflow: hidden;
+            background: #0d0d11;
+        }
+
+        .phone-screen img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            object-position: top center;
+            display: block;
             transition: transform 0.8s var(--ease);
         }
 
-        .theme-card:hover .card-thumb img {
-            transform: scale(1.07);
+        .theme-card:hover .phone-screen img {
+            transform: scale(1.05);
         }
 
-        .card-overlay {
+        /* Dynamic Island */
+        .phone-island {
+            position: absolute;
+            top: 6px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 32%;
+            height: 8.5px;
+            background: #000000;
+            border-radius: 999px;
+            z-index: 6;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Realistic Diagonal Glass Glare Reflection */
+        .phone-glare {
             position: absolute;
             inset: 0;
-            background: var(--card-overlay-grad, linear-gradient(to top, rgba(20, 20, 25, 0.82) 0%, rgba(20, 20, 25, 0.1) 60%, transparent 100%));
-            display: flex;
-            align-items: flex-end;
-            justify-content: space-between;
-            padding: 1.2rem;
+            background: linear-gradient(125deg, rgba(255, 255, 255, 0.22) 0%, rgba(255, 255, 255, 0.05) 30%, transparent 55%);
+            pointer-events: none;
+            z-index: 5;
         }
 
-        .badge-style {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(8px);
-            color: var(--card-badge-color, #1a1a1a);
-            font-size: 0.72rem;
-            font-weight: 700;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            padding: 6px 14px;
+        /* Home Indicator Bar */
+        .phone-home-bar {
+            position: absolute;
+            bottom: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 36%;
+            height: 3px;
+            background: rgba(255, 255, 255, 0.75);
             border-radius: 999px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            display: inline-flex;
+            z-index: 6;
+        }
+
+        /* ==================== 2. TRIO 3-HP CASCADE (SCREENSHOT STYLE) ==================== */
+        .view-trio {
+            padding-bottom: 12px;
+        }
+
+        .phone-trio {
+            width: 114px;
+            height: 232px;
+            position: absolute;
+            transition: transform 0.5s var(--ease), box-shadow 0.5s var(--ease);
+        }
+
+        .phone-left {
+            transform: translateX(-56px) rotateY(18deg) rotateZ(-6deg) scale(0.92);
+            z-index: 1;
+            opacity: 0.95;
+        }
+
+        .phone-center {
+            position: relative;
+            z-index: 3;
+            transform: scale(1.04);
+            box-shadow:
+                0 0 0 1px rgba(255, 255, 255, 0.2) inset,
+                0 22px 42px -10px rgba(0, 0, 0, 0.42);
+        }
+
+        .phone-right {
+            transform: translateX(56px) rotateY(-18deg) rotateZ(6deg) scale(0.92);
+            z-index: 1;
+            opacity: 0.95;
+        }
+
+        /* Interactive 3D Float Hover */
+        .theme-card:hover .phone-left {
+            transform: translateX(-66px) rotateY(12deg) rotateZ(-4deg) translateY(-6px) scale(0.94);
+        }
+
+        .theme-card:hover .phone-center {
+            transform: translateY(-8px) scale(1.08);
+            box-shadow:
+                0 0 0 1px rgba(255, 255, 255, 0.25) inset,
+                0 28px 50px -10px rgba(0, 0, 0, 0.48);
+        }
+
+        .theme-card:hover .phone-right {
+            transform: translateX(66px) rotateY(-12deg) rotateZ(4deg) translateY(-6px) scale(0.94);
+        }
+
+        /* ==================== 3. SINGLE PHONE (HP TUNGGAL) ==================== */
+        .phone-single {
+            width: 136px;
+            height: 270px;
+            box-shadow:
+                0 0 0 1px rgba(255, 255, 255, 0.2) inset,
+                0 22px 44px -8px rgba(0, 0, 0, 0.38);
+        }
+
+        .phone-button {
+            position: absolute;
+            background: #25252b;
+            border-radius: 2px;
+            z-index: 0;
+        }
+
+        .btn-vol-up {
+            left: -5.5px;
+            top: 48px;
+            width: 3px;
+            height: 18px;
+        }
+
+        .btn-vol-down {
+            left: -5.5px;
+            top: 74px;
+            width: 3px;
+            height: 18px;
+        }
+
+        .btn-power {
+            right: -5.5px;
+            top: 58px;
+            width: 3px;
+            height: 26px;
+        }
+
+        /* ==================== 4. TABLET (TAB) FRAME ==================== */
+        .tablet-frame {
+            position: relative;
+            width: 250px;
+            height: 196px;
+            border-radius: 16px;
+            background: #1c1c20;
+            border: 6px solid #232328;
+            box-shadow:
+                0 0 0 1px rgba(255, 255, 255, 0.12) inset,
+                0 20px 42px -10px rgba(0, 0, 0, 0.35);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.5s var(--ease);
+        }
+
+        .theme-card:hover .tablet-frame {
+            transform: translateY(-6px) scale(1.02);
+        }
+
+        .tablet-cam {
+            position: absolute;
+            top: 2px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background: #3a3a42;
+            z-index: 6;
+        }
+
+        .tablet-screen {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            overflow: hidden;
+            background: #0d0d11;
+        }
+
+        .tablet-screen img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center;
+            display: block;
+        }
+
+        .tablet-glare {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(130deg, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0.04) 30%, transparent 60%);
+            pointer-events: none;
+            z-index: 5;
+        }
+
+        /* ==================== 5. DESKTOP (LAPTOP) FRAME ==================== */
+        .laptop-frame {
+            position: relative;
+            display: flex;
+            flex-direction: column;
             align-items: center;
-            gap: 6px;
+            transition: transform 0.5s var(--ease);
         }
 
-        .badge-quick-id {
-            background: rgba(0, 0, 0, 0.45);
+        .theme-card:hover .laptop-frame {
+            transform: translateY(-6px) scale(1.02);
+        }
+
+        .laptop-lid {
+            position: relative;
+            width: 260px;
+            height: 162px;
+            border-radius: 9px 9px 0 0;
+            background: #141417;
+            border: 5px solid #1c1c20;
+            border-bottom: 7px solid #141417;
+            box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.12) inset;
+            overflow: hidden;
+        }
+
+        .laptop-notch {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 16px;
+            height: 4px;
+            background: #000;
+            border-radius: 0 0 3px 3px;
+            z-index: 6;
+        }
+
+        .laptop-screen {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background: #08080a;
+        }
+
+        .laptop-screen img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center;
+            display: block;
+        }
+
+        .laptop-glare {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0.03) 35%, transparent 65%);
+            pointer-events: none;
+            z-index: 5;
+        }
+
+        .laptop-base {
+            width: 298px;
+            height: 11px;
+            background: linear-gradient(to bottom, #cfd3dc 0%, #9aa0ac 100%);
+            border-radius: 0 0 7px 7px;
+            position: relative;
+            box-shadow: 0 14px 28px -6px rgba(0, 0, 0, 0.35);
+        }
+
+        .laptop-groove {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 38px;
+            height: 3px;
+            background: #626772;
+            border-radius: 0 0 3px 3px;
+        }
+
+        /* Hover Cue */
+        .mockup-hover-cue {
+            position: absolute;
+            bottom: 12px;
+            right: 14px;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.9);
             backdrop-filter: blur(8px);
-            color: #ffffff;
-            font-size: 0.68rem;
-            font-weight: 600;
-            padding: 5px 10px;
-            border-radius: 8px;
-            letter-spacing: 0.04em;
+            color: #1e293b;
+            display: grid;
+            place-items: center;
+            font-size: 0.78rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            z-index: 16;
+            text-decoration: none;
+            transition: all 0.25s;
         }
 
-        /* Card Content */
+        .mockup-hover-cue:hover {
+            background: #0f172a;
+            color: #ffffff;
+            transform: scale(1.1);
+        }
+
+        /* ==================== CARD BODY & PRICING ==================== */
         .card-body {
-            padding: 1.6rem;
+            padding: 1.6rem 1.6rem 1.4rem;
             display: flex;
             flex-direction: column;
             flex: 1;
@@ -814,18 +1308,32 @@
         }
 
         .card-title-group {
-            margin-bottom: 0.75rem;
+            margin-bottom: 0.65rem;
         }
 
         .card-title {
             font-family: var(--card-font-title, 'Playfair Display', serif);
-            font-size: 1.55rem;
+            font-size: 1.5rem;
             font-weight: 700;
             color: var(--card-title-color, var(--text-main));
             margin-bottom: 0.25rem;
             display: flex;
             align-items: center;
             justify-content: space-between;
+        }
+
+        .card-palette-mini {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .palette-dot-mini {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
         }
 
         .card-tagline {
@@ -837,47 +1345,117 @@
 
         .card-desc {
             color: var(--card-desc-color, var(--text-secondary));
-            font-size: 0.88rem;
-            line-height: 1.65;
-            margin-bottom: 1.3rem;
+            font-size: 0.86rem;
+            line-height: 1.6;
+            margin-bottom: 1.1rem;
             flex: 1;
         }
 
+        /* Pricing Block (Like Screenshot) */
+        .card-pricing {
+            background: var(--card-price-bg, #faf8f5);
+            border: 1px solid var(--card-inner-border, var(--border-subtle));
+            border-radius: 14px;
+            padding: 12px 14px;
+            margin-bottom: 1.1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .price-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .price-original {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .price-strikethrough {
+            font-size: 0.82rem;
+            font-weight: 500;
+            color: #ef4444;
+            text-decoration: line-through;
+            opacity: 0.85;
+        }
+
+        .price-discount-tag {
+            font-size: 0.62rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            background: #fee2e2;
+            color: #b91c1c;
+            padding: 2px 6px;
+            border-radius: 6px;
+        }
+
+        .price-promo {
+            display: flex;
+            align-items: baseline;
+            gap: 3px;
+        }
+
+        .price-promo .currency {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--card-title-color, #1e293b);
+        }
+
+        .price-promo .amount {
+            font-size: 1.45rem;
+            font-weight: 800;
+            color: var(--card-title-color, #0f172a);
+            letter-spacing: -0.02em;
+            line-height: 1;
+        }
+
+        .price-promo .period {
+            font-size: 0.68rem;
+            color: var(--text-muted);
+            margin-left: 3px;
+        }
+
+        /* Card Tags */
         .card-tags {
             display: flex;
             flex-wrap: wrap;
             gap: 6px;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem;
         }
 
         .tag {
             background: var(--card-tag-bg, var(--bg-elevated));
             color: var(--card-tag-color, var(--text-secondary));
-            font-size: 0.72rem;
+            font-size: 0.7rem;
             font-weight: 600;
-            padding: 4px 10px;
+            padding: 3px 9px;
             border-radius: 8px;
             border: 1px solid var(--card-tag-border, var(--border-subtle));
         }
 
-        /* Card Actions */
+        /* Card Actions (Lihat Contoh Button) */
         .card-actions {
             display: flex;
             align-items: center;
             gap: 8px;
             border-top: 1px solid var(--card-inner-border, var(--border-subtle));
-            padding-top: 1.2rem;
+            padding-top: 1.1rem;
         }
 
-        .btn-preview {
+        .btn-lihat-contoh {
             flex: 1;
             background: var(--card-btn-bg, var(--gold-gradient));
             color: var(--card-btn-text, #ffffff);
             font-weight: 700;
-            font-size: 0.88rem;
+            font-size: 0.92rem;
             text-align: center;
-            padding: 12px 18px;
-            border-radius: 14px;
+            padding: 12px 20px;
+            border-radius: 999px;
             text-decoration: none;
             display: inline-flex;
             align-items: center;
@@ -888,16 +1466,17 @@
             border: var(--card-btn-border, none);
         }
 
-        .btn-preview:hover {
+        .btn-lihat-contoh:hover {
             filter: brightness(1.08);
             transform: translateY(-2px);
             box-shadow: 0 8px 22px var(--card-btn-shadow, rgba(179, 130, 42, 0.35));
+            color: #ffffff;
         }
 
-        .btn-modal-view {
+        .btn-action-icon {
             width: 44px;
             height: 44px;
-            border-radius: 14px;
+            border-radius: 50%;
             background: var(--card-iconbtn-bg, var(--bg-elevated));
             border: 1px solid var(--card-iconbtn-border, var(--border-subtle));
             color: var(--card-iconbtn-color, var(--text-main));
@@ -906,289 +1485,174 @@
             cursor: pointer;
             transition: all 0.25s;
             font-size: 0.95rem;
+            text-decoration: none;
+        }
+
+        .btn-action-icon:hover {
+            transform: translateY(-2px);
         }
 
         .btn-modal-view:hover {
             background: var(--card-iconbtn-hover-bg, var(--gold));
             color: #ffffff;
             border-color: transparent;
+        }
+
+        .btn-wa-order {
+            color: #25d366;
+        }
+
+        .btn-wa-order:hover {
+            background: #25d366;
+            color: #ffffff;
+            border-color: #25d366;
+        }
+
+
+
+        /* Card Body (Tanpa Deskripsi Sesuai Request User) */
+        /* Card Body (Persis Screenshot User: media_1793334756757.png) */
+        .card-body {
+            padding: 1.4rem 1.6rem 1.6rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            flex: 1;
+        }
+
+        .card-theme-name {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: #1e293b;
+            letter-spacing: -0.01em;
+            margin: 0;
+            line-height: 1.25;
+            text-align: center;
+        }
+
+        .card-price-strike {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #e05353;
+            text-decoration: line-through;
+            letter-spacing: 0.01em;
+            margin-top: 6px;
+            text-align: center;
+        }
+
+        .card-price-current {
+            font-size: 1.7rem;
+            font-weight: 800;
+            color: #1e293b;
+            letter-spacing: -0.02em;
+            line-height: 1.15;
+            margin-top: 3px;
+            margin-bottom: 1.15rem;
+            text-align: center;
+        }
+
+        .card-actions {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+        }
+
+        .btn-lihat-contoh {
+            flex: 1;
+            background: #0f172a;
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 0.92rem;
+            text-align: center;
+            padding: 12px 22px;
+            border-radius: 999px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: all 0.25s;
+        }
+
+        .btn-lihat-contoh:hover {
+            background: var(--gold);
+            color: #ffffff;
             transform: translateY(-2px);
         }
 
-        .btn-copy-link {
-            width: 44px;
-            height: 44px;
-            border-radius: 14px;
-            background: var(--card-iconbtn-bg, var(--bg-elevated));
-            border: 1px solid var(--card-iconbtn-border, var(--border-subtle));
-            color: var(--card-iconbtn-color, var(--text-main));
+        .btn-action-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: #ffffff;
+            border: 1px solid var(--border-subtle);
+            color: var(--text-secondary);
             display: grid;
             place-items: center;
             cursor: pointer;
-            transition: all 0.25s;
-            font-size: 0.9rem;
+            transition: all 0.2s;
+            text-decoration: none;
+            flex-shrink: 0;
         }
 
-        .btn-copy-link:hover {
-            background: #2b303c;
-            color: #ffffff;
-            border-color: #2b303c;
+        .btn-action-icon:hover {
+            border-color: #0f172a;
+            color: #0f172a;
             transform: translateY(-2px);
         }
 
+        }
+
         /* ========================================================
-           CUSTOM PER-THEME IDENTITY STYLES (Masing-Masing Card)
+           UNIFORM CARD STYLING (Semua Card Seragam & Bersih)
            ======================================================== */
-
-        /* 1. SUNDA SIGER (Sage Green, Jasmine White, Siger Gold) */
-        .theme-card[data-theme-id="sunda-siger"] {
-            --card-border: #bcd5c1;
-            --card-border-hover: #3e684a;
-            --card-header-bg: #f2f7f3;
-            --card-pill-text: #2f563a;
-            --card-badge-color: #24462e;
-            --card-body-bg: #ffffff;
-            --card-font-title: 'Playfair Display', serif;
-            --card-title-color: #1f3b27;
-            --card-tagline-color: #497956;
-            --card-tag-bg: #eef5f0;
-            --card-tag-color: #2b5035;
-            --card-tag-border: #cfe0d3;
-            --card-btn-bg: linear-gradient(135deg, #2e5639 0%, #467954 60%, #30593c 100%);
-            --card-btn-shadow: rgba(46, 86, 57, 0.3);
-            --card-iconbtn-hover-bg: #2e5639;
+        .theme-card {
+            background: #ffffff;
+            border: 1px solid var(--border-subtle);
+            border-radius: 20px;
+            box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        /* 2. MELATI PRADA (Royal Maroon & Prada Gold) */
-        .theme-card[data-theme-id="melati-prada"] {
-            --card-border: #e3bcc4;
-            --card-border-hover: #7d1527;
-            --card-header-bg: #fdf4f5;
-            --card-pill-text: #7d1527;
-            --card-badge-color: #630f1e;
-            --card-body-bg: #ffffff;
-            --card-font-title: 'Cinzel', serif;
-            --card-title-color: #520b17;
-            --card-tagline-color: #b07e2a;
-            --card-tag-bg: #faebed;
-            --card-tag-color: #6a1322;
-            --card-tag-border: #eecad0;
-            --card-btn-bg: linear-gradient(135deg, #5c0f1c 0%, #8c1b2f 60%, #520b17 100%);
-            --card-btn-shadow: rgba(106, 19, 34, 0.35);
-            --card-iconbtn-hover-bg: #6a1322;
+        .theme-card:hover {
+            border-color: #cbd5e1;
+            transform: translateY(-5px);
+            box-shadow: 0 16px 32px rgba(15, 23, 42, 0.08);
         }
 
-        /* 3. KRATON SOGAN (Batik Sogan Brown, Antique Sepia, Keraton Gold) */
-        .theme-card[data-theme-id="kraton"] {
-            --card-border: #dcc7b1;
-            --card-border-hover: #6d411f;
-            --card-header-bg: #faf4ed;
-            --card-pill-text: #603819;
-            --card-badge-color: #4e2c13;
-            --card-body-bg: #ffffff;
-            --card-font-title: 'Cinzel', serif;
-            --card-title-color: #3b210d;
-            --card-tagline-color: #a46d29;
-            --card-tag-bg: #f5ece2;
-            --card-tag-color: #553116;
-            --card-tag-border: #e3d2c1;
-            --card-btn-bg: linear-gradient(135deg, #4d2b12 0%, #784822 60%, #43240e 100%);
-            --card-btn-shadow: rgba(77, 43, 18, 0.35);
-            --card-iconbtn-hover-bg: #5a3418;
+        .theme-card .mockup-stage {
+            background: radial-gradient(circle at 50% 25%, #ffffff 0%, #f8fafc 65%, #f1f5f9 100%);
+            border-bottom: 1px solid var(--border-subtle);
         }
 
-        /* 4. AURORA MIDNIGHT (Dark Cosmic Card, Cyan/Violet Neon Glow) */
-        .theme-card[data-theme-id="aurora"] {
-            --card-border: #4a5b8c;
-            --card-border-hover: #00d2ff;
-            --card-header-bg: #101424;
-            --card-inner-border: #242c4a;
-            --card-pill-text: #00e5ff;
-            --card-badge-color: #0b0e1b;
-            --card-body-bg: #13172a;
-            --card-font-title: 'Plus Jakarta Sans', sans-serif;
-            --card-title-color: #ffffff;
-            --card-tagline-color: #00e5ff;
-            --card-desc-color: #a7b3d1;
-            --card-tag-bg: #1c223c;
-            --card-tag-color: #c0cef2;
-            --card-tag-border: #313d69;
-            --card-btn-bg: linear-gradient(135deg, #00c6ff 0%, #0072ff 50%, #7f00ff 100%);
-            --card-btn-text: #ffffff;
-            --card-btn-shadow: rgba(0, 198, 255, 0.4);
-            --card-iconbtn-bg: #1c223c;
-            --card-iconbtn-border: #313d69;
-            --card-iconbtn-color: #ffffff;
-            --card-iconbtn-hover-bg: #00c6ff;
-            box-shadow: 0 16px 36px rgba(11, 14, 27, 0.25);
+        .theme-card .mockup-pill-badge {
+            background: rgba(255, 255, 255, 0.92);
+            border: 1px solid var(--border-subtle);
+            color: #0f172a;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
         }
 
-        /* 5. EMERALD NOIR (Art Deco Great Gatsby, Deep Emerald & Rich Gold) */
-        .theme-card[data-theme-id="emerald"] {
-            --card-border: #235442;
-            --card-border-hover: #d4af37;
-            --card-header-bg: #0b241a;
-            --card-inner-border: #164230;
-            --card-pill-text: #e6c86e;
-            --card-badge-color: #061d15;
-            --card-body-bg: #0d2a1f;
-            --card-font-title: 'Cinzel', serif;
-            --card-title-color: #f7eed3;
-            --card-tagline-color: #dfba57;
-            --card-desc-color: #b5cebe;
-            --card-tag-bg: #14392b;
-            --card-tag-color: #d6e8dd;
-            --card-tag-border: #285e48;
-            --card-btn-bg: linear-gradient(135deg, #cba135 0%, #ecd077 50%, #b28622 100%);
-            --card-btn-text: #081e16;
-            --card-btn-shadow: rgba(203, 161, 53, 0.35);
-            --card-iconbtn-bg: #14392b;
-            --card-iconbtn-border: #285e48;
-            --card-iconbtn-color: #f7eed3;
-            --card-iconbtn-hover-bg: #cba135;
-            box-shadow: 0 16px 36px rgba(10, 35, 25, 0.2);
+        .theme-card .card-title {
+            color: #0f172a;
+            font-size: 1.15rem;
+            font-weight: 800;
         }
 
-        /* 6. BOTANICA EDITORIAL (Ivory Handmade Paper & Wax Seal Terracotta) */
-        .theme-card[data-theme-id="botanica"] {
-            --card-border: #ded5c2;
-            --card-border-hover: #c45b42;
-            --card-header-bg: #f9f6ee;
-            --card-pill-text: #96402b;
-            --card-badge-color: #8c3824;
-            --card-body-bg: #fcfbf7;
-            --card-font-title: 'Cormorant Garamond', serif;
-            --card-title-color: #2b251f;
-            --card-tagline-color: #ad4e37;
-            --card-tag-bg: #f0ebe0;
-            --card-tag-color: #4a4136;
-            --card-tag-border: #dfd7c7;
-            --card-btn-bg: linear-gradient(135deg, #b84f37 0%, #cf634a 60%, #a4402a 100%);
-            --card-btn-shadow: rgba(184, 79, 55, 0.3);
-            --card-iconbtn-hover-bg: #b84f37;
+        .theme-card .btn-lihat-contoh {
+            background: #0f172a;
+            color: #ffffff;
+            border-radius: 999px;
+            font-weight: 700;
+            padding: 11px;
+            transition: all 0.25s;
         }
 
-        /* 7. CLASSIC DUSTY ROSE (Original Dusty Rose & Romantic Blush) */
-        .theme-card[data-theme-id="classic-rose"] {
-            --card-border: #e8c6cc;
-            --card-border-hover: #be6b77;
-            --card-header-bg: #fdf5f6;
-            --card-pill-text: #9e4653;
-            --card-badge-color: #863642;
-            --card-body-bg: #ffffff;
-            --card-font-title: 'Playfair Display', serif;
-            --card-title-color: #4d232a;
-            --card-tagline-color: #b85b68;
-            --card-tag-bg: #faedf0;
-            --card-tag-color: #7b313d;
-            --card-tag-border: #eccbd1;
-            --card-btn-bg: linear-gradient(135deg, #b55d6a 0%, #cf7885 60%, #9e4b57 100%);
-            --card-btn-shadow: rgba(181, 93, 106, 0.3);
-            --card-iconbtn-hover-bg: #b55d6a;
-        }
-
-        /* 8. UNGU SENJA (Twilight Plum Dusk, Lilac Mist & Saffron Glow) */
-        .theme-card[data-theme-id="ungu-senja"] {
-            --card-border: #cebfde;
-            --card-border-hover: #673385;
-            --card-header-bg: #f8f4fc;
-            --card-pill-text: #572972;
-            --card-badge-color: #4b1f64;
-            --card-body-bg: #ffffff;
-            --card-font-title: 'Playfair Display', serif;
-            --card-title-color: #38154e;
-            --card-tagline-color: #8646ab;
-            --card-tag-bg: #f1e9f7;
-            --card-tag-color: #4d2067;
-            --card-tag-border: #dfd0ea;
-            --card-btn-bg: linear-gradient(135deg, #51246c 0%, #7d3ca8 60%, #461c60 100%);
-            --card-btn-shadow: rgba(81, 36, 108, 0.32);
-            --card-iconbtn-hover-bg: #51246c;
-        }
-
-        /* 9. PANTAI FRANGIPANI (Tropical Boho, Warm Sand & Terracotta Frangipani) */
-        .theme-card[data-theme-id="pantai-frangipani"] {
-            --card-border: #edd5bf;
-            --card-border-hover: #c45c3b;
-            --card-header-bg: #faf4ed;
-            --card-pill-text: #a84628;
-            --card-badge-color: #8f381d;
-            --card-body-bg: #ffffff;
-            --card-font-title: 'Cormorant Garamond', serif;
-            --card-title-color: #352119;
-            --card-tagline-color: #bf5534;
-            --card-tag-bg: #f7ebe0;
-            --card-tag-color: #633221;
-            --card-tag-border: #edd3c1;
-            --card-btn-bg: linear-gradient(135deg, #ba4f2f 0%, #db6d4c 60%, #a43e20 100%);
-            --card-btn-shadow: rgba(186, 79, 47, 0.32);
-            --card-iconbtn-hover-bg: #ba4f2f;
-        }
-
-        /* 10. WASTRA MODERN / BATIK (Indigo, Soga Red, Emas Prada & Truntum) */
-        .theme-card[data-theme-id="batik"] {
-            --card-border: #d5ad55;
-            --card-border-hover: #b5502f;
-            --card-header-bg: #f5efe3;
-            --card-pill-text: #b5502f;
-            --card-badge-color: #11213f;
-            --card-body-bg: #fffdf8;
-            --card-font-title: 'Plus Jakarta Sans', sans-serif;
-            --card-title-color: #14213a;
-            --card-tagline-color: #b5502f;
-            --card-tag-bg: #f5efe3;
-            --card-tag-color: #3b2112;
-            --card-tag-border: #e6dac6;
-            --card-btn-bg: linear-gradient(135deg, #11213f 0%, #1f3764 50%, #b5502f 100%);
-            --card-btn-text: #ffffff;
-            --card-btn-shadow: rgba(17, 33, 63, 0.35);
-            --card-iconbtn-hover-bg: #11213f;
-        }
-
-        /* 11. TIDELINE BENTO (Sea Blue, Sun Amber, Mist Paper & App Style) */
-        .theme-card[data-theme-id="tideline-bento"] {
-            --card-border: #b8d4e3;
-            --card-border-hover: #2f6f8f;
-            --card-header-bg: #eef3f5;
-            --card-pill-text: #2f6f8f;
-            --card-badge-color: #0f2233;
-            --card-body-bg: #ffffff;
-            --card-font-title: 'Plus Jakarta Sans', sans-serif;
-            --card-title-color: #0f2233;
-            --card-tagline-color: #2f6f8f;
-            --card-tag-bg: #e5eff4;
-            --card-tag-color: #173f54;
-            --card-tag-border: #c2dae7;
-            --card-btn-bg: linear-gradient(135deg, #0f2233 0%, #2f6f8f 60%, #f0b94a 100%);
-            --card-btn-text: #ffffff;
-            --card-btn-shadow: rgba(47, 111, 143, 0.35);
-            --card-iconbtn-hover-bg: #2f6f8f;
-        }
-
-        /* 12. GOLDEN HOUR (Sinematik Scene, Sunset Amber & Dark Night Glass) */
-        .theme-card[data-theme-id="golden-hour"] {
-            --card-border: #523522;
-            --card-border-hover: #ffb26b;
-            --card-header-bg: #0e1620;
-            --card-inner-border: #233140;
-            --card-pill-text: #ffb26b;
-            --card-badge-color: #0a1118;
-            --card-body-bg: #0c141d;
-            --card-font-title: 'Playfair Display', serif;
-            --card-title-color: #f6efe6;
-            --card-tagline-color: #ffb26b;
-            --card-desc-color: #cbd3dc;
-            --card-tag-bg: #182330;
-            --card-tag-color: #ffd0a4;
-            --card-tag-border: #3b4d60;
-            --card-btn-bg: linear-gradient(135deg, #ffb26b 0%, #f08a7e 50%, #d46b38 100%);
-            --card-btn-text: #2a1606;
-            --card-btn-shadow: rgba(255, 178, 107, 0.4);
-            --card-iconbtn-bg: #182330;
-            --card-iconbtn-border: #3b4d60;
-            --card-iconbtn-color: #f6efe6;
-            --card-iconbtn-hover-bg: #ffb26b;
-            box-shadow: 0 16px 36px rgba(10, 17, 24, 0.28);
+        .theme-card .btn-lihat-contoh:hover {
+            background: var(--gold);
+            color: #ffffff;
         }
 
         /* Device Preview Modal */
@@ -1327,7 +1791,8 @@
             border: 4px solid #ffffff;
             box-shadow: 0 25px 70px rgba(0, 0, 0, 0.45);
             transition: width 0.4s var(--ease), height 0.4s var(--ease);
-            width: 412px; /* Default Mobile */
+            width: 412px;
+            /* Default Mobile */
             height: 860px;
             max-height: 90vh;
             position: relative;
@@ -1366,7 +1831,7 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
             z-index: 10000;
             opacity: 0;
             transition: all 0.35s var(--ease);
@@ -1378,38 +1843,673 @@
             opacity: 1;
         }
 
-        /* Footer */
-        footer {
-            border-top: 1px solid var(--border-subtle);
-            padding: 3.5rem 0;
-            text-align: center;
-            background: #ffffff;
-            color: var(--text-secondary);
-            font-size: 0.9rem;
+
+
+        /* ========================================================
+           PRICING SECTION (PERSIS GAMBAR REFERENSI: CLEAN WHITE CARDS)
+           ======================================================== */
+        .pricing-3-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.8rem;
+            max-width: 1100px;
+            margin: 0 auto;
+            align-items: stretch;
         }
 
-        footer strong {
+        .price-card {
+            background: #ffffff;
+            border: 1px solid var(--border-subtle);
+            border-radius: 24px;
+            padding: 2.2rem;
+            display: flex;
+            flex-direction: column;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .price-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .price-card.featured {
+            border: 2px solid #0f172a;
+            box-shadow: var(--shadow-md);
+        }
+
+        .price-badge-top {
+            position: absolute;
+            top: -12px;
+            right: 24px;
+            background: #0f172a;
+            color: #ffffff;
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 999px;
+            text-transform: uppercase;
+        }
+
+        .plan-title {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: #0f172a;
+            margin-bottom: 0.3rem;
+        }
+
+        .plan-sub {
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .plan-price-row {
+            padding: 1.2rem 0;
+            border-top: 1px solid var(--border-subtle);
+            border-bottom: 1px solid var(--border-subtle);
+            margin-bottom: 1.5rem;
+        }
+
+        .plan-strike {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-decoration: line-through;
+            display: block;
+        }
+
+        .plan-price {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #0f172a;
+            display: flex;
+            align-items: baseline;
+            gap: 4px;
+        }
+
+        .plan-curr {
+            font-size: 1.1rem;
+            font-weight: 700;
             color: var(--gold);
         }
 
-        @media (max-width: 768px) {
-            .themes-grid {
-                grid-template-columns: 1fr;
-            }
-            .device-switcher {
+        .plan-per {
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: var(--text-muted);
+        }
+
+        .plan-btn {
+            background: #0f172a;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 12px;
+            border-radius: 999px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-align: center;
+            display: block;
+            margin-bottom: 1.8rem;
+            transition: all 0.2s;
+        }
+
+        .plan-btn:hover {
+            background: var(--gold);
+            color: #ffffff;
+        }
+
+        .plan-btn-outline {
+            background: #ffffff;
+            color: #0f172a;
+            border: 1.5px solid var(--border-subtle);
+        }
+
+        .plan-btn-outline:hover {
+            border-color: #0f172a;
+            background: var(--bg-subtle);
+        }
+
+        .plan-features {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            flex: 1;
+        }
+
+        .plan-features li {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .plan-features li i {
+            color: #10b981;
+            font-size: 0.85rem;
+        }
+
+        /* ========================================================
+           FAQ ACCORDION (PERSIS GAMBAR REFERENSI: CLEAN BORDER ACCORDION)
+           ======================================================== */
+        .faq-accordion-wrap {
+            max-width: 820px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .faq-row {
+            background: #ffffff;
+            border: 1px solid var(--border-subtle);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.25s;
+        }
+
+        .faq-row.open {
+            border-color: #0f172a;
+        }
+
+        .faq-row-head {
+            padding: 1.2rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            user-select: none;
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: #0f172a;
+        }
+
+        .faq-row-head i {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            transition: transform 0.3s;
+        }
+
+        .faq-row.open .faq-row-head i {
+            transform: rotate(180deg);
+            color: #0f172a;
+        }
+
+        .faq-row-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease, padding 0.3s;
+            padding: 0 1.5rem;
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            line-height: 1.65;
+        }
+
+        .faq-row.open .faq-row-content {
+            max-height: 250px;
+            padding: 0 1.5rem 1.2rem;
+        }
+
+        /* ========================================================
+           BOTTOM BANNER CTA (PERSIS GAMBAR REFERENSI)
+           ======================================================== */
+        .bottom-banner-cta {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            border-radius: 30px;
+            padding: 3.5rem 3rem;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+            margin: 4rem 0 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bottom-banner-cta h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.8rem, 3.2vw, 2.4rem);
+            font-weight: 700;
+            margin-bottom: 0.6rem;
+            color: #ffffff;
+        }
+
+        .bottom-banner-cta p {
+            color: #94a3b8;
+            font-size: 0.95rem;
+            max-width: 540px;
+            line-height: 1.6;
+        }
+
+        .btn-banner-wa {
+            background: #25d366;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 14px 28px;
+            border-radius: 999px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            transition: all 0.25s;
+            box-shadow: 0 8px 24px rgba(37, 211, 102, 0.35);
+            white-space: nowrap;
+        }
+
+        .btn-banner-wa:hover {
+            filter: brightness(1.08);
+            transform: translateY(-2px);
+            color: #ffffff;
+        }
+
+        /* ========================================================
+           FLOATING WHATSAPP BUTTON (KANAN BAWAH)
+           ======================================================== */
+        .floating-wa-btn {
+            position: fixed;
+            bottom: 26px;
+            right: 26px;
+            z-index: 9999;
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            background: #25d366;
+            color: #ffffff;
+            padding: 11px 18px 11px 13px;
+            border-radius: 999px;
+            box-shadow: 0 10px 28px rgba(37, 211, 102, 0.4), 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.86rem;
+            transition: all 0.3s;
+            border: 2px solid #ffffff;
+        }
+
+        .floating-wa-btn:hover {
+            transform: translateY(-3px) scale(1.03);
+            color: #ffffff;
+            box-shadow: 0 14px 34px rgba(37, 211, 102, 0.55);
+        }
+
+        .floating-wa-icon {
+            font-size: 1.45rem;
+            display: grid;
+            place-items: center;
+        }
+
+        /* ========================================================
+           MODAL PREVIEW IFRAME & AUTH MODAL
+           ======================================================== */
+        .preview-modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(8px);
+            z-index: 10000;
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .preview-modal.active {
+            display: flex;
+        }
+
+        .modal-header {
+            background: #ffffff;
+            padding: 12px 20px;
+            border-bottom: 1px solid var(--border-subtle);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .modal-theme-info h3 {
+            font-size: 1.1rem;
+            font-weight: 800;
+        }
+
+        .modal-theme-info p {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+        }
+
+        .device-switcher-modal {
+            display: flex;
+            gap: 6px;
+            background: var(--bg-subtle);
+            padding: 4px;
+            border-radius: 999px;
+        }
+
+        .device-btn-m {
+            background: none;
+            border: none;
+            padding: 6px 14px;
+            border-radius: 999px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .device-btn-m.active {
+            background: #ffffff;
+            color: #0f172a;
+            font-weight: 700;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+        }
+
+        .modal-controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-open-tab {
+            text-decoration: none;
+            color: var(--text-main);
+            font-size: 0.85rem;
+            font-weight: 600;
+            padding: 6px 12px;
+            border-radius: 8px;
+            border: 1px solid var(--border-subtle);
+        }
+
+        .btn-close-modal {
+            background: none;
+            border: none;
+            font-size: 1.3rem;
+            cursor: pointer;
+            color: var(--text-secondary);
+            padding: 4px;
+        }
+
+        .modal-body {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        .iframe-wrapper {
+            width: 412px;
+            height: 85vh;
+            background: #ffffff;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+            transition: width 0.3s ease;
+        }
+
+        .iframe-wrapper.tablet {
+            width: 768px;
+        }
+
+        .iframe-wrapper.desktop {
+            width: 100%;
+            max-width: 1200px;
+            height: 88vh;
+        }
+
+        .preview-iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Auth Modal */
+        .auth-modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(8px);
+            z-index: 10001;
+            display: none;
+            place-items: center;
+            padding: 1.5rem;
+        }
+
+        .auth-modal.active {
+            display: grid;
+        }
+
+        .auth-card {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 2.2rem;
+            max-width: 420px;
+            width: 100%;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+        }
+
+        .auth-close-btn {
+            position: absolute;
+            top: 18px;
+            right: 18px;
+            background: var(--bg-subtle);
+            border: none;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        .auth-tabs {
+            display: flex;
+            background: var(--bg-subtle);
+            padding: 4px;
+            border-radius: 999px;
+            margin: 1.4rem 0;
+        }
+
+        .auth-tab-btn {
+            flex: 1;
+            border: none;
+            background: transparent;
+            padding: 8px;
+            border-radius: 999px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            cursor: pointer;
+            color: var(--text-secondary);
+        }
+
+        .auth-tab-btn.active {
+            background: #ffffff;
+            color: #0f172a;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+        }
+
+        .auth-input {
+            width: 100%;
+            padding: 10px 14px;
+            border: 1.5px solid var(--border-subtle);
+            border-radius: 12px;
+            font-family: inherit;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            outline: none;
+        }
+
+        .auth-input:focus {
+            border-color: #0f172a;
+        }
+
+        .auth-submit-btn {
+            width: 100%;
+            background: #0f172a;
+            color: #ffffff;
+            border: none;
+            padding: 12px;
+            border-radius: 999px;
+            font-weight: 700;
+            font-size: 0.92rem;
+            cursor: pointer;
+        }
+
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: #0f172a;
+            color: #ffffff;
+            padding: 10px 20px;
+            border-radius: 999px;
+            font-size: 0.86rem;
+            font-weight: 600;
+            box-shadow: var(--shadow-md);
+            z-index: 10002;
+            transition: transform 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .toast.show {
+            transform: translateX(-50%) translateY(0);
+        }
+
+        /* ========================================================
+           14 FITUR LENGKAP GRID (#fitur)
+           ======================================================== */
+        .features-grid-14 {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 1.25rem;
+            margin-top: 2.2rem;
+        }
+
+        .feature-box {
+            background: #ffffff;
+            border: 1px solid var(--border-subtle);
+            border-radius: 20px;
+            padding: 1.5rem 1.4rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.85rem;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+        }
+
+        .feature-box:hover {
+            border-color: #cbd5e1;
+            transform: translateY(-4px);
+            box-shadow: 0 14px 30px rgba(15, 23, 42, 0.06);
+        }
+
+        .feature-box-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .feature-icon-wrap {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: var(--gold-soft-bg);
+            color: var(--gold);
+            display: grid;
+            place-items: center;
+            font-size: 1.15rem;
+            flex-shrink: 0;
+            transition: all 0.25s;
+        }
+
+        .feature-box:hover .feature-icon-wrap {
+            background: #0f172a;
+            color: #ffffff;
+        }
+
+        .feature-box h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #0f172a;
+            line-height: 1.35;
+            margin: 0;
+        }
+
+        .feature-box p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .feature-badge-mini {
+            display: inline-block;
+            font-size: 0.65rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            background: #f1f5f9;
+            color: #475569;
+            padding: 2px 8px;
+            border-radius: 6px;
+            align-self: flex-start;
+        }
+
+        /* Clean Footer */
+        footer {
+            padding: 3rem 0;
+            border-top: 1px solid var(--border-subtle);
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.88rem;
+        }
+
+        @media (max-width: 1024px) {
+
+            .floating-widget-left,
+            .floating-widget-right {
                 display: none;
             }
-            .guest-box {
+
+            .split-row {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+
+            .bento-3-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-3-grid {
+                grid-template-columns: 1fr;
+                max-width: 440px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links-center {
+                display: none;
+            }
+
+            .nav-mobile-toggle {
+                display: block;
+            }
+
+            .bottom-banner-cta {
                 flex-direction: column;
-                padding: 16px;
-                border-radius: 16px;
+                text-align: center;
+                padding: 2.5rem 1.8rem;
             }
-            .guest-btn-update {
-                width: 100%;
-                justify-content: center;
+
+            .floating-wa-btn span {
+                display: none;
             }
-            .hero {
-                padding: 3rem 0 2rem;
+
+            .floating-wa-btn {
+                padding: 13px;
+                border-radius: 50%;
             }
         }
     </style>
@@ -1417,188 +2517,715 @@
 
 <body>
 
-    <div class="ambient-glow"></div>
-
-    <!-- Modern Floating Header -->
-    <header class="header-floating" id="mainHeader">
+    <!-- CLEAN MODERN NAVBAR (SESUAI GAMBAR REFERENSI USER) -->
+    <header class="site-header" id="mainHeader">
         <div class="container">
-            <div class="nav-shell">
-                <!-- Brand -->
+            <div class="nav-inner">
+                <!-- Logo Paling Kiri -->
                 <a href="#" class="brand">
-                    <div class="brand-icon-wrapper">
-                        <div class="brand-icon">
-                            <i class="fas fa-heart"></i>
-                        </div>
-                        <span class="brand-sparkle"><i class="fas fa-sparkles"></i></span>
+                    <div class="brand-icon">
+                        <i class="fas fa-crown"></i>
                     </div>
                     <div class="brand-text">
-                        <div class="brand-title">
-                            <span>Undangan Gue</span>
-                            <i class="fas fa-circle-check brand-badge" title="Official Studio"></i>
-                        </div>
-                        <span class="brand-sub">Koleksi Undangan Digital</span>
+                        <span class="brand-name">undangan gue</span>
+                        <span class="brand-tag">Digital Invitation</span>
                     </div>
                 </a>
 
-                <!-- Center Nav Links (Desktop) -->
-                <nav class="nav-menu-desktop" aria-label="Navigasi Utama">
-                    <a href="#themes-container" class="nav-link active">
-                        <i class="fas fa-border-all"></i> Katalog
-                    </a>
-                    <a href="javascript:void(0)" onclick="quickFilter('adat')" class="nav-link">
-                        <i class="fas fa-archway"></i> Adat
-                    </a>
-                    <a href="javascript:void(0)" onclick="quickFilter('luxury')" class="nav-link">
-                        <i class="fas fa-gem"></i> Luxury
-                    </a>
-                    <a href="javascript:void(0)" onclick="focusGuestInput()" class="nav-link">
-                        <i class="fas fa-user-edit"></i> Nama Tamu
-                    </a>
-                </nav>
+                <!-- Nav Links Tengah (Fitur, Tema, Harga, Kontak) -->
+                <ul class="nav-links-center">
+                    <li><a href="#fitur" class="nav-item-link">Fitur</a></li>
+                    <li><a href="#tema" class="nav-item-link">Tema</a></li>
+                    <li><a href="#harga" class="nav-item-link">Harga</a></li>
+                    <li><a href="#kontak" class="nav-item-link">Kontak</a></li>
+                </ul>
 
-                <!-- Right Actions -->
-                <div class="nav-actions">
-                    <!-- Live Pulsing Indicator -->
-                    <div class="live-status-chip" title="12 Desain Siap Pakai">
-                        <span class="status-pulse"></span>
-                        <span class="status-text"><span id="theme-count">12</span> Tema Aktif</span>
-                    </div>
-
-                    <!-- WhatsApp CTA Button -->
-                    <a href="https://wa.me/?text=Halo%20Undangan%20Gue%2C%20saya%20tertarik%20dengan%20template%20undangan%20pernikahan" target="_blank" class="nav-btn-cta" title="Konsultasi via WhatsApp">
-                        <i class="fab fa-whatsapp"></i>
-                        <span>Konsultasi</span>
-                    </a>
-
-                    <!-- Mobile Hamburger Toggle -->
-                    <button class="nav-toggle-btn" id="navToggleBtn" onclick="toggleMobileMenu()" aria-label="Buka Menu" aria-expanded="false">
-                        <span class="hamburger-bar"></span>
-                        <span class="hamburger-bar"></span>
-                        <span class="hamburger-bar"></span>
+                <!-- Tombol Paling Kanan: Daftar / Masuk -->
+                <div class="nav-right-actions">
+                    <button type="button" class="btn-nav-primary" onclick="openAuthModal('masuk')">
+                        <i class="fas fa-user-circle"></i>
+                        <span>Daftar / Masuk</span>
+                    </button>
+                    <button class="nav-mobile-toggle" onclick="toggleMobileNav()" aria-label="Menu">
+                        <i class="fas fa-bars"></i>
                     </button>
                 </div>
             </div>
 
-            <!-- Mobile Drawer / Dropdown Menu -->
-            <div class="mobile-menu-drawer" id="mobileDrawer">
-                <div class="mobile-menu-header">
-                    <div class="mobile-guest-badge">
-                        <i class="fas fa-user-tag"></i> Tamu: <strong id="mobileGuestLabel">Bapak / Ibu / Saudara/i</strong>
-                    </div>
-                </div>
-
-                <div class="mobile-nav-links">
-                    <a href="#themes-container" class="mobile-link" onclick="closeMobileMenu()">
-                        <div class="mobile-link-icon"><i class="fas fa-border-all"></i></div>
-                        <div class="mobile-link-text">
-                            <strong>Semua Katalog Tema</strong>
-                            <span>Jelajahi 12 desain undangan siap pakai</span>
-                        </div>
-                        <i class="fas fa-chevron-right mobile-link-arrow"></i>
-                    </a>
-
-                    <a href="javascript:void(0)" class="mobile-link" onclick="quickFilter('adat'); closeMobileMenu()">
-                        <div class="mobile-link-icon" style="background:#f2f7f3; color:#2e5639;"><i class="fas fa-archway"></i></div>
-                        <div class="mobile-link-text">
-                            <strong>Tema Adat Nusantara</strong>
-                            <span>Sunda Priangan, Melati Prada, Kraton Jawa</span>
-                        </div>
-                        <i class="fas fa-chevron-right mobile-link-arrow"></i>
-                    </a>
-
-                    <a href="javascript:void(0)" class="mobile-link" onclick="quickFilter('luxury'); closeMobileMenu()">
-                        <div class="mobile-link-icon" style="background:#f4f3fb; color:#51246c;"><i class="fas fa-gem"></i></div>
-                        <div class="mobile-link-text">
-                            <strong>Dark &amp; Luxury</strong>
-                            <span>Aurora Midnight, Emerald Gatsby, Ungu Senja</span>
-                        </div>
-                        <i class="fas fa-chevron-right mobile-link-arrow"></i>
-                    </a>
-
-                    <a href="javascript:void(0)" class="mobile-link" onclick="focusGuestInput(); closeMobileMenu()">
-                        <div class="mobile-link-icon" style="background:#faf5ea; color:#b3822a;"><i class="fas fa-user-edit"></i></div>
-                        <div class="mobile-link-text">
-                            <strong>Simulasi Nama Tamu</strong>
-                            <span>Atur parameter tautan undangan digital</span>
-                        </div>
-                        <i class="fas fa-chevron-right mobile-link-arrow"></i>
-                    </a>
-                </div>
-
-                <div class="mobile-menu-footer">
-                    <a href="https://wa.me/?text=Halo%20Undangan%20Gue%2C%20saya%20tertarik%20dengan%20template%20undangan%20pernikahan" target="_blank" class="mobile-btn-cta">
-                        <i class="fab fa-whatsapp"></i> Chat WhatsApp Sekarang
-                    </a>
-                </div>
+            <!-- Mobile Drawer -->
+            <div class="mobile-drawer" id="mobileDrawer">
+                <a href="#fitur" class="mobile-drawer-link" onclick="toggleMobileNav()">Fitur <i
+                        class="fas fa-chevron-right"></i></a>
+                <a href="#tema" class="mobile-drawer-link" onclick="toggleMobileNav()">Tema <i
+                        class="fas fa-chevron-right"></i></a>
+                <a href="#harga" class="mobile-drawer-link" onclick="toggleMobileNav()">Harga <i
+                        class="fas fa-chevron-right"></i></a>
+                <a href="#kontak" class="mobile-drawer-link" onclick="toggleMobileNav()">Kontak <i
+                        class="fas fa-chevron-right"></i></a>
+                <button type="button" class="btn-nav-primary"
+                    style="width:100%; justify-content:center; margin-top:0.5rem;"
+                    onclick="toggleMobileNav(); openAuthModal('masuk');">
+                    Daftar / Masuk
+                </button>
             </div>
         </div>
     </header>
 
     <main class="container">
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="hero-chip">
-                <i class="fas fa-sparkles"></i> Katalog Tema Lengkap &amp; Siap Pakai
-            </div>
-            <h2>Pilih Desain Undangan <em>Impianmu</em></h2>
-            <p>Eksplorasi koleksi template web undangan pernikahan dengan identitas visual khas: adat nusantara, dark luxury glassmorphism, hingga editorial mewah.</p>
+        <!-- 1. HERO SECTION (PERSIS LAYOUT GAMBAR REFERENSI USER) -->
+        <section class="hero-section" id="home">
 
-            <!-- Nama Tamu Customizer Form -->
-            <div class="guest-box">
-                <i class="fas fa-user-tag guest-icon"></i>
-                <div class="guest-input-wrap">
-                    <label>Simulasi Nama Tamu Undangan</label>
-                    <input type="text" id="guest-input" placeholder="Cth: Bapak Budi &amp; Rekan" value="Bapak / Ibu / Saudara/i">
+
+            <h1 class="hero-title">Rayakan Cinta Abadi, <br>Ciptakan <em>Momen Istimewa</em></h1>
+            <p class="hero-desc">Koleksi template web undangan pernikahan digital siap pakai dengan identitas adat
+                nusantara &amp; modern luxury. Praktis, elegan, dan berkesan bagi para tamu.</p>
+
+            <!-- Center Phone Showcase with Floating UI Cards (Persis Gambar) -->
+            <div class="hero-showcase-wrap">
+                <!-- Floating Left: Review / 500+ Pengantin -->
+                <div class="floating-widget-left">
+                    <div class="stars-row">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <div>
+                        <div class="widget-val">500+</div>
+                        <div class="widget-sub">Pasangan Bahagia</div>
+                    </div>
                 </div>
-                <button class="guest-btn-update" onclick="updateGuestLinks()">
-                    Terapkan Nama <i class="fas fa-arrow-right"></i>
-                </button>
+
+                <!-- Center Realistic Phone -->
+                <div class="hero-phone-center">
+                    <div class="hero-phone-screen">
+                        <img src="./asset/img/pre3.jpeg" alt="Preview Undangan Pernikahan">
+                    </div>
+                </div>
+
+                <!-- Floating Right: Amplop Digital & QRIS -->
+                <div class="floating-widget-right">
+                    <span class="widget-badge-pill">Amplop Digital</span>
+                    <div class="widget-amount">Rp 0 Potongan</div>
+                    <div class="widget-note">100% Langsung ke Rekening</div>
+                </div>
+            </div>
+
+            <!-- Partner & Payment Logos Bar (Persis Gambar) -->
+            <div class="partner-bar">
+                <div class="partner-label">Didukung Berbagai Metode Pembayaran &amp; Navigasi Presisi</div>
+                <div class="partner-logos">
+                    <div class="partner-logo-item"><i class="fas fa-building-columns"></i> Bank BCA</div>
+                    <div class="partner-logo-item"><i class="fas fa-building-columns"></i> Bank Mandiri</div>
+                    <div class="partner-logo-item"><i class="fas fa-qrcode"></i> QRIS Semua Bank</div>
+                    <div class="partner-logo-item"><i class="fas fa-map-location-dot"></i> Google Maps</div>
+                    <div class="partner-logo-item"><i class="fas fa-music"></i> Autoplay Music</div>
+                    <div class="partner-logo-item"><i class="fas fa-bolt"></i> Cloud Hosting Cepat</div>
+                </div>
             </div>
         </section>
 
-        <!-- Category Filters -->
-        <div class="filter-section">
-            <button class="filter-btn active" data-filter="all"><i class="fas fa-border-all"></i> Semua Tema</button>
-            <button class="filter-btn" data-filter="adat"><i class="fas fa-archway"></i> Adat Nusantara</button>
-            <button class="filter-btn" data-filter="luxury"><i class="fas fa-gem"></i> Dark &amp; Luxury</button>
-            <button class="filter-btn" data-filter="editorial"><i class="fas fa-book-open"></i> Editorial &amp; Paper</button>
-            <button class="filter-btn" data-filter="nature"><i class="fas fa-leaf"></i> Tropical &amp; Boho</button>
-        </div>
+        <!-- 2. SECTION KENAPA MEMILIH KAMI / 3 BENTO CARDS (PERSIS GAMBAR REFERENSI) -->
+        <section class="section-block" id="fitur">
+            <div class="section-header-center">
+                <div class="pill-badge"><i class="fas fa-check-circle"></i> Kenapa Memilih Kami</div>
+                <h2 class="section-h2">Solusi Lengkap Undangan Pernikahan Impian</h2>
+                <p class="section-sub">Kemudahan dan keindahan terbaik untuk menyambut hari paling bersejarah Anda dan
+                    pasangan.</p>
+            </div>
 
-        <!-- Cards Showcase Grid -->
-        <div class="themes-grid" id="themes-container">
-            <!-- Theme items will be rendered by JS -->
+            <div class="bento-3-grid">
+                <!-- Bento Card 1 -->
+                <div class="bento-card">
+                    <div class="bento-card-top bento-top-1">
+                        <div class="bento-mini-mockup">
+                            <i class="fas fa-layer-group"
+                                style="font-size:1.4rem; color:#0284c7; margin-bottom:6px;"></i>
+                            <div style="font-size:0.82rem; font-weight:800; color:#0f172a;">17+ Tema Siap Pakai</div>
+                            <div style="font-size:0.7rem; color:#64748b;">Adat, Luxury &amp; Minimalis</div>
+                        </div>
+                    </div>
+                    <div class="bento-card-body">
+                        <h3>Desain Berkelas &amp; Eksklusif</h3>
+                        <p>Pilihan tema Nusantara (Sunda, Jawa, Bali) hingga estetika dark luxury glassmorphism yang
+                            responsif di semua perangkat.</p>
+                    </div>
+                </div>
+
+                <!-- Bento Card 2 -->
+                <div class="bento-card">
+                    <div class="bento-card-top bento-top-2">
+                        <div class="bento-mini-mockup">
+                            <i class="fas fa-wallet"
+                                style="font-size:1.4rem; color:var(--gold); margin-bottom:6px;"></i>
+                            <div style="font-size:0.82rem; font-weight:800; color:#0f172a;">Amplop &amp; RSVP Live</div>
+                            <div style="font-size:0.7rem; color:#64748b;">Bebas Potongan Komisi</div>
+                        </div>
+                    </div>
+                    <div class="bento-card-body">
+                        <h3>Fitur Interaktif Terlengkap</h3>
+                        <p>Kirim kado pernikahan via QRIS, buku tamu realtime, rute petunjuk jalan Google Maps, dan
+                            alunan musik romantis pilihan.</p>
+                    </div>
+                </div>
+
+                <!-- Bento Card 3 -->
+                <div class="bento-card">
+                    <div class="bento-card-top bento-top-3">
+                        <div class="bento-mini-mockup">
+                            <i class="fas fa-tag" style="font-size:1.4rem; color:#10b981; margin-bottom:6px;"></i>
+                            <div style="font-size:0.82rem; font-weight:800; color:#0f172a;">Mulai Rp 99.000</div>
+                            <div style="font-size:0.7rem; color:#64748b;">Aktif Selamanya</div>
+                        </div>
+                    </div>
+                    <div class="bento-card-body">
+                        <h3>Hemat &amp; Tanpa Batas Tamu</h3>
+                        <p>Satu harga terjangkau untuk membagikan undangan personal ke ribuan kontak kerabat tanpa
+                            batasan kuota.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 14 FITUR LENGKAP SHOWCASE -->
+            <div style="margin-top: 4.5rem;">
+                <div class="section-header-center">
+                    <div class="pill-badge"><i class="fas fa-wand-magic-sparkles"></i> 14 Fitur Lengkap</div>
+                    <h2 class="section-h2">Fitur Lengkap Undangan Pernikahan</h2>
+                    <p class="section-sub">Semua kebutuhan undangan pernikahan modern telah kami sediakan secara lengkap tanpa biaya tersembunyi.</p>
+                </div>
+
+                <div class="features-grid-14">
+                    <!-- 1. Unlimited Share -->
+                    <div class="feature-box">
+                        <div class="feature-box-header">
+                            <div class="feature-icon-wrap"><i class="fas fa-share-nodes"></i></div>
+                            <div>
+                                <h4>Unlimited Share</h4>
+                                <span class="feature-badge-mini">Bebas Kuota</span>
+                            </div>
+                        </div>
+                        <p>Bebas sebar tautan undangan pernikahan ke ribuan kontak keluarga, teman, dan grup tanpa batasan.</p>
+                    </div>
+
+                    <!-- 2. Unlimited Custom Nama Tamu -->
+                    <div class="feature-box">
+                        <div class="feature-box-header">
+                            <div class="feature-icon-wrap"><i class="fas fa-user-tag"></i></div>
+                            <div>
+                                <h4>Unlimited Custom Nama Tamu</h4>
+                                <span class="feature-badge-mini">Personal</span>
+                            </div>
+                        </div>
+                        <p>Generate tautan khusus dengan nama tamu otomatis tanpa batas agar undangan terasa lebih sopan dan eksklusif.</p>
+                    </div>
+
+                    <!-- 3. Konfirmasi Kehadiran (RSVP) -->
+                    <div class="feature-box">
+                        <div class="feature-box-header">
+                            <div class="feature-icon-wrap"><i class="fas fa-clipboard-check"></i></div>
+                            <div>
+                                <h4>Konfirmasi Kehadiran (RSVP)</h4>
+                                <span class="feature-badge-mini">Realtime</span>
+                            </div>
+                        </div>
+                        <p>Tamu dapat mengonfirmasi kehadiran serta jumlah orang yang hadir secara instan dan langsung terdata rapi.</p>
+                    </div>
+
+                    <!-- 4. Gallery Foto dan Video -->
+                    <div class="feature-box">
+                        <div class="feature-box-header">
+                            <div class="feature-icon-wrap"><i class="fas fa-photo-film"></i></div>
+                            <div>
+                                <h4>Gallery Foto dan Video</h4>
+                                <span class="feature-badge-mini">Kualitas HD</span>
+                            </div>
+                        </div>
+                        <p>Tampilkan album foto kenangan terbaik kualitas jernih dan sematkan video sinematik prewedding romantis.</p>
+                    </div>
+
+                    <!-- 5. Countdown Acara -->
+                    <div class="feature-box">
+                        <div class="feature-box-header">
+                            <div class="feature-icon-wrap"><i class="fas fa-stopwatch"></i></div>
+                            <div>
+                                <h4>Countdown Acara</h4>
+                                <span class="feature-badge-mini">Otomatis</span>
+                            </div>
+                        </div>
+                        <p>Penghitung mundur waktu otomatis yang presisi menuju momen sakral akad nikah dan resepsi pernikahan Anda.</p>
+                    </div>
+
+                    <!-- 6. Amplop Digital -->
+                    <div class="feature-box">
+                        <div class="feature-box-header">
+                            <div class="feature-icon-wrap"><i class="fas fa-wallet"></i></div>
+                            <div>
+                                <h4>Amplop Digital</h4>
+                                <span class="feature-badge-mini">0% Potongan</span>
+                            </div>
+                        </div>
+                        <p>Fasilitasi tamu yang ingin mengirim kado cashless via transfer rekening atau QRIS tanpa potongan sepeser pun.</p>
+                    </div>
+
+                    <!-- 7. Ucapan dan Doa -->
+                    <div class="feature-box">
+                        <div class="feature-box-header">
+                            <div class="feature-icon-wrap"><i class="fas fa-comments"></i></div>
+                            <div>
+                                <h4>Ucapan dan Doa</h4>
+                                <span class="feature-badge-mini">Buku Tamu</span>
+                            </div>
+                        </div>
+                        <p>Buku tamu interaktif tempat keluarga dan para sahabat memberikan ucapan selamat serta doa restu yang tulus.</p>
+                    </div>
+
+                    <!-- 8. Love Story -->
+                    <div class="feature-box">
+                        <div class="feature-box-header">
+                            <div class="feature-icon-wrap"><i class="fas fa-heart-pulse"></i></div>
+                            <div>
+                                <h4>Love Story</h4>
+                                <span class="feature-badge-mini">Linimasa Kisah</span>
+                            </div>
+                        </div>
+                        <p>Bagikan perjalanan cinta manis Anda berdua, mulai dari awal perjumpaan, komitmen, hingga menuju pelaminan suci.</p>
+                    </div>
+
+                    <!-- 9. Navigasi Maps -->
+                    <div class="feature-box">
+                        <div class="feature-box-header">
+                            <div class="feature-icon-wrap"><i class="fas fa-map-location-dot"></i></div>
+                            <div>
+                                <h4>Navigasi Maps</h4>
+                                <span class="feature-badge-mini">Presisi</span>
+                            </div>
+                        </div>
+                        <p>Terintegrasi Google Maps satu klik untuk memandu rute perjalanan tamu undangan langsung sampai ke lokasi acara.</p>
+                    </div>
+
+                    <!-- 10. Free Request Backsound -->
+                    <div class="feature-box">
+                        <div class="feature-box-header">
+                            <div class="feature-icon-wrap"><i class="fas fa-music"></i></div>
+                            <div>
+                                <h4>Free Request Backsound</h4>
+                                <span class="feature-badge-mini">Autoplay</span>
+                            </div>
+                        </div>
+                        <p>Bebas memilih lagu romantis kenangan favorit Anda berdua untuk mengiringi tamu saat membuka undangan online.</p>
+                    </div>
+
+                    <!-- 11. Live Streaming -->
+                    <div class="feature-box">
+                        <div class="feature-box-header">
+                            <div class="feature-icon-wrap"><i class="fas fa-video"></i></div>
+                            <div>
+                                <h4>Live Streaming</h4>
+                                <span class="feature-badge-mini">Online Link</span>
+                            </div>
+                        </div>
+                        <p>Tombol tautan siaran langsung (YouTube, Zoom, Instagram Live) bagi kerabat yang berhalangan hadir langsung di lokasi.</p>
+                    </div>
+
+                    <!-- 12. Google Calendar -->
+                    <div class="feature-box">
+                        <div class="feature-box-header">
+                            <div class="feature-icon-wrap"><i class="fas fa-calendar-check"></i></div>
+                            <div>
+                                <h4>Google Calendar</h4>
+                                <span class="feature-badge-mini">Pengingat</span>
+                            </div>
+                        </div>
+                        <p>Sinkronisasi tanggal pernikahan ke Google Calendar tamu dengan satu klik agar jadwal tidak terlewatkan.</p>
+                    </div>
+
+                    <!-- 13. Ayat Pernikahan -->
+                    <div class="feature-box">
+                        <div class="feature-box-header">
+                            <div class="feature-icon-wrap"><i class="fas fa-book-open-reader"></i></div>
+                            <div>
+                                <h4>Ayat Pernikahan</h4>
+                                <span class="feature-badge-mini">Sakral</span>
+                            </div>
+                        </div>
+                        <p>Penyematan kutipan ayat suci Al-Qur'an (cth. Ar-Rum: 21), Alkitab, atau kata mutiara pernikahan sakral &amp; religius.</p>
+                    </div>
+
+                    <!-- 14. Free Revisi -->
+                    <div class="feature-box">
+                        <div class="feature-box-header">
+                            <div class="feature-icon-wrap"><i class="fas fa-rotate-left"></i></div>
+                            <div>
+                                <h4>Free Revisi</h4>
+                                <span class="feature-badge-mini">Garansi</span>
+                            </div>
+                        </div>
+                        <p>Layanan revisi perubahan data teks, penambahan foto, koreksi waktu atau lokasi acara hingga hari H tanpa rasa cemas.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. SECTION SPLIT 1: SOCIAL PROOF & KEMUDAHAN TAMU (PERSIS GAMBAR REFERENSI) -->
+        <section class="split-row">
+            <div class="split-text">
+                <div class="pill-badge"><i class="fas fa-heart"></i> Pengalaman Tamu Terbaik</div>
+                <h2 class="split-h2">Undangan Digital yang Mudah Diakses Siapa Saja</h2>
+                <p class="split-p">Tamu tidak perlu mengunduh aplikasi apapun. Cukup klik tautan personal yang Anda
+                    bagikan melalui WhatsApp, tamu langsung dapat melihat detail acara, peta rute lokasi, dan mengirim
+                    ucapan doa restu secara instan.</p>
+
+                <div class="social-proof-bar">
+                    <div class="avatars-overlap">
+                        <img src="./asset/img/crop1.jpeg" class="avatar-circle" alt="User 1">
+                        <img src="./asset/img/crop2.jpeg" class="avatar-circle" alt="User 2">
+                        <img src="./asset/img/female.jpeg" class="avatar-circle" alt="User 3">
+                        <img src="./asset/img/male.jpeg" class="avatar-circle" alt="User 4">
+                    </div>
+                    <div class="social-text">
+                        <strong>500+ Pasangan</strong> mempercayakan hari bahagianya
+                    </div>
+                </div>
+
+                <div>
+                    <a href="#tema" class="btn-split-cta">
+                        <i class="fas fa-eye"></i> Lihat Semua Tema
+                    </a>
+                </div>
+            </div>
+
+            <!-- Visual Showcase Card -->
+            <div class="split-visual-card">
+                <img src="./asset/img/pre6.jpeg" class="split-img-main" alt="Couple Preview">
+                <div
+                    style="margin-top:1.2rem; display:flex; align-items:center; justify-content:space-between; background:var(--bg-subtle); padding:12px 16px; border-radius:14px;">
+                    <div>
+                        <div style="font-weight:700; font-size:0.88rem; color:#0f172a;">Konfirmasi RSVP Tamu</div>
+                        <div style="font-size:0.75rem; color:#64748b;">142 Tamu Hadir • 18 Doa Restu Masuk</div>
+                    </div>
+                    <span
+                        style="background:#ecfdf5; color:#059669; font-weight:700; font-size:0.75rem; padding:4px 10px; border-radius:8px;">Live</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. SECTION SPLIT 2: FITUR PINTAR (PERSIS GAMBAR REFERENSI) -->
+        <section class="split-row">
+            <!-- Visual Showcase Card -->
+            <div class="split-visual-card">
+                <img src="./asset/img/pre8.jpeg" class="split-img-main" alt="Wedding Moments">
+                <div
+                    style="margin-top:1.2rem; display:flex; align-items:center; gap:12px; background:var(--bg-subtle); padding:12px 16px; border-radius:14px;">
+                    <i class="fas fa-music" style="color:var(--gold); font-size:1.2rem;"></i>
+                    <div style="flex:1;">
+                        <div style="font-weight:700; font-size:0.86rem; color:#0f172a;">Alunan Musik Romantis</div>
+                        <div style="font-size:0.74rem; color:#64748b;">Bebas pilih lagu kenangan berdua</div>
+                    </div>
+                    <span style="font-size:0.78rem; font-weight:700; color:#0f172a;">Autoplay</span>
+                </div>
+            </div>
+
+            <div class="split-text">
+                <div class="pill-badge"><i class="fas fa-wand-magic-sparkles"></i> Fitur Lengkap</div>
+                <h2 class="split-h2">Fitur Cerdas untuk Kelancaran Acara Anda</h2>
+                <p class="split-p">Setiap detail dipersiapkan secara matang agar Anda tidak perlu repot mengurus teknis
+                    undangan di tengah kesibukan persiapan pernikahan.</p>
+
+                <ul class="split-check-list">
+                    <li><i class="fas fa-circle-check"></i> Amplop Digital &amp; QRIS tanpa potongan komisi sepeser pun
+                    </li>
+                    <li><i class="fas fa-circle-check"></i> Generator nama tamu otomatis tanpa batasan jumlah</li>
+                    <li><i class="fas fa-circle-check"></i> Navigasi presisi Google Maps &amp; Kalender Pengingat</li>
+                    <li><i class="fas fa-circle-check"></i> Galeri foto resolusi tinggi &amp; video sinematik</li>
+                </ul>
+
+                <div>
+                    <a href="#tema" class="btn-split-cta">
+                        Pilih Desain Sekarang
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. KATALOG TEMA (#tema) - CARD TETAP ADA DENGAN MOCKUP NATURAL -->
+        <section class="section-block" id="tema">
+            <div class="section-header-center">
+                <div class="pill-badge"><i class="fas fa-border-all"></i> <span id="theme-count">17</span> Tema Pilihan
+                </div>
+                <h2 class="section-h2">Pilih Desain Undangan <em>Impianmu</em></h2>
+                <p class="section-sub">Eksplorasi koleksi template dengan identitas visual khas adat nusantara, dark
+                    luxury, dan editorial minimalis.</p>
+            </div>
+
+            <!-- Nama Tamu Customizer Form -->
+            <div class="guest-box">
+                <i class="fas fa-user-tag" style="color:var(--gold);"></i>
+                <div class="guest-input-wrap">
+                    <label>Simulasi Nama Tamu Undangan</label>
+                    <input type="text" id="guest-input" placeholder="Cth: Bapak Budi &amp; Rekan"
+                        value="Bapak / Ibu / Saudara/i">
+                </div>
+                <button class="guest-btn-update" onclick="updateGuestLinks()">
+                    Terapkan Nama
+                </button>
+            </div>
+
+            <!-- Category Filters -->
+            <div class="filter-section">
+                <button class="filter-btn active" data-filter="all"><i class="fas fa-border-all"></i> Semua
+                    Tema</button>
+                <button class="filter-btn" data-filter="adat"><i class="fas fa-archway"></i> Adat Nusantara</button>
+                <button class="filter-btn" data-filter="luxury"><i class="fas fa-gem"></i> Dark &amp; Luxury</button>
+                <button class="filter-btn" data-filter="editorial"><i class="fas fa-book-open"></i> Editorial &amp;
+                    Paper</button>
+                <button class="filter-btn" data-filter="nature"><i class="fas fa-leaf"></i> Tropical &amp; Boho</button>
+            </div>
+
+            <!-- Cards Showcase Grid -->
+            <div class="themes-grid" id="themes-container">
+                <!-- Theme items will be rendered by JS without description -->
+            </div>
+        </section>
+
+        <!-- 6. PRICING SECTION (PERSIS GAMBAR REFERENSI: CLEAN CARDS) -->
+        <section class="section-block" id="harga">
+            <div class="section-header-center">
+                <div class="pill-badge"><i class="fas fa-tags"></i> Investasi Hemat</div>
+                <h2 class="section-h2">Pilihan Paket Harga Terbaik</h2>
+                <p class="section-sub">Investasi terbaik untuk momen sakral sekali seumur hidup. Tanpa biaya
+                    tersembunyi.</p>
+            </div>
+
+            <div class="pricing-3-grid">
+                <!-- Paket Silver -->
+                <div class="price-card">
+                    <div class="plan-title">Paket Silver</div>
+                    <div class="plan-sub">Pilihan tepat untuk acara pernikahan intim &amp; sederhana.</div>
+
+                    <div class="plan-price-row">
+                        <span class="plan-strike">Rp 198.000</span>
+                        <div class="plan-price">
+                            <span class="plan-curr">Rp</span> 99.000 <span class="plan-per">/ aktif 6 bulan</span>
+                        </div>
+                    </div>
+
+                    <a href="https://wa.me/6281234567890?text=Halo%20Admin%20Undangan%20Gue%2C%20saya%20tertarik%20pesan%20Paket%20Silver%20(Rp%2099.000)"
+                        target="_blank" class="plan-btn plan-btn-outline">
+                        Pilih Paket Silver
+                    </a>
+
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check"></i> Unlimited Share</li>
+                        <li><i class="fas fa-check"></i> Custom Nama Tamu (hingga 500)</li>
+                        <li><i class="fas fa-check"></i> Konfirmasi Kehadiran (RSVP)</li>
+                        <li><i class="fas fa-check"></i> Gallery Foto HD (hingga 10 foto)</li>
+                        <li><i class="fas fa-check"></i> Countdown Acara &amp; Navigasi Maps</li>
+                        <li><i class="fas fa-check"></i> Free Request Backsound Pilihan</li>
+                        <li><i class="fas fa-check"></i> Ayat Pernikahan &amp; Ucapan Doa</li>
+                        <li><i class="fas fa-check"></i> Free Revisi Minor</li>
+                    </ul>
+                </div>
+
+                <!-- Paket Gold (Featured) -->
+                <div class="price-card featured">
+                    <div class="price-badge-top">Paling Diminati</div>
+                    <div class="plan-title">Paket Gold</div>
+                    <div class="plan-sub">Paket terlengkap &amp; terpopuler untuk pesta pernikahan idaman.</div>
+
+                    <div class="plan-price-row">
+                        <span class="plan-strike">Rp 249.000</span>
+                        <div class="plan-price">
+                            <span class="plan-curr">Rp</span> 129.000 <span class="plan-per">/ aktif selamanya</span>
+                        </div>
+                    </div>
+
+                    <a href="https://wa.me/6281234567890?text=Halo%20Admin%20Undangan%20Gue%2C%20saya%20tertarik%20pesan%20Paket%20Gold%20(Rp%20129.000)"
+                        target="_blank" class="plan-btn">
+                        Pilih Paket Gold
+                    </a>
+
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check"></i> <strong>Semua 14 Fitur Lengkap Aktif</strong></li>
+                        <li><i class="fas fa-check"></i> <strong>Unlimited Share &amp; Custom Nama Tamu</strong></li>
+                        <li><i class="fas fa-check"></i> Konfirmasi Kehadiran (RSVP) Realtime</li>
+                        <li><i class="fas fa-check"></i> Gallery Foto &amp; Video Sinematik</li>
+                        <li><i class="fas fa-check"></i> Countdown Acara &amp; Google Calendar</li>
+                        <li><i class="fas fa-check"></i> Amplop Digital &amp; QRIS Tanpa Potongan</li>
+                        <li><i class="fas fa-check"></i> Ucapan dan Doa + Love Story</li>
+                        <li><i class="fas fa-check"></i> Navigasi Maps &amp; Live Streaming Link</li>
+                        <li><i class="fas fa-check"></i> Free Request Backsound Favorit</li>
+                        <li><i class="fas fa-check"></i> Ayat Pernikahan &amp; Free Revisi</li>
+                        <li><i class="fas fa-check"></i> <strong>Masa Aktif SELAMANYA &amp; Bebas 17 Tema</strong></li>
+                    </ul>
+                </div>
+
+                <!-- Paket Platinum -->
+                <div class="price-card">
+                    <div class="plan-title">Paket Platinum</div>
+                    <div class="plan-sub">Kustomisasi eksklusif didampingi desainer profesional.</div>
+
+                    <div class="plan-price-row">
+                        <span class="plan-strike">Rp 399.000</span>
+                        <div class="plan-price">
+                            <span class="plan-curr">Rp</span> 199.000 <span class="plan-per">/ VIP Eksklusif</span>
+                        </div>
+                    </div>
+
+                    <a href="https://wa.me/6281234567890?text=Halo%20Admin%20Undangan%20Gue%2C%20saya%20tertarik%20pesan%20Paket%20Platinum%20(Rp%20199.000)"
+                        target="_blank" class="plan-btn plan-btn-outline">
+                        Pilih Paket Platinum
+                    </a>
+
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check"></i> <strong>Semua 14 Fitur Paket Gold Lengkap</strong></li>
+                        <li><i class="fas fa-check"></i> Kustomisasi Palet Warna, Font &amp; Tema</li>
+                        <li><i class="fas fa-check"></i> Desain Ornamen &amp; Monogram Nama Custom</li>
+                        <li><i class="fas fa-check"></i> Free Revisi Prioritas Sampai Puas</li>
+                        <li><i class="fas fa-check"></i> Pendampingan Input Data &amp; Foto oleh Desainer VIP</li>
+                        <li><i class="fas fa-check"></i> Pengerjaan Prioritas Jalur Kilat 12 Jam</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. FAQ SECTION (PERSIS GAMBAR REFERENSI: CLEAN ACCORDION) -->
+        <section class="section-block" id="kontak">
+            <div class="section-header-center">
+                <div class="pill-badge"><i class="fas fa-question-circle"></i> Bantuan</div>
+                <h2 class="section-h2">Frequently Asked Questions</h2>
+                <p class="section-sub">Pertanyaan yang sering diajukan seputar pemesanan dan fitur undangan online kami.
+                </p>
+            </div>
+
+            <div class="faq-accordion-wrap">
+                <!-- Q1 -->
+                <div class="faq-row open">
+                    <div class="faq-row-head" onclick="toggleFaqRow(this)">
+                        <span>Berapa lama proses pengerjaan undangan web?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-row-content">
+                        Proses pembuatan sangat cepat! Setelah data acara dan foto dikirimkan, undangan Anda akan
+                        selesai dalam waktu 1x24 jam (atau maksimal 12 jam untuk Paket Platinum VIP).
+                    </div>
+                </div>
+
+                <!-- Q2 -->
+                <div class="faq-row">
+                    <div class="faq-row-head" onclick="toggleFaqRow(this)">
+                        <span>Apakah ada batasan jumlah tamu yang bisa diundang?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-row-content">
+                        Tidak ada batasan sama sekali! Anda dapat membuat tautan personal dengan nama masing-masing tamu
+                        sebanyak yang Anda perlukan dan menyebarkannya via WhatsApp tanpa biaya tambahan.
+                    </div>
+                </div>
+
+                <!-- Q3 -->
+                <div class="faq-row">
+                    <div class="faq-row-head" onclick="toggleFaqRow(this)">
+                        <span>Bagaimana sistem amplop digital &amp; QRIS bekerja?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-row-content">
+                        Tamu dapat menyalin nomor rekening (BCA, Mandiri, dll.) atau memindai barcode QRIS langsung dari
+                        layar undangan. Dana hadiah langsung masuk 100% ke rekening pribadi Anda tanpa perantara dan
+                        tanpa potongan komisi sepeser pun.
+                    </div>
+                </div>
+
+                <!-- Q4 -->
+                <div class="faq-row">
+                    <div class="faq-row-head" onclick="toggleFaqRow(this)">
+                        <span>Bisakah saya mengganti lagu latar dengan lagu pilihan sendiri?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-row-content">
+                        Tentu bisa! Anda bebas memilih lagu favorit Anda atau mengirimkan file MP3 yang diinginkan untuk
+                        dipasang sebagai musik latar autoplay.
+                    </div>
+                </div>
+
+                <!-- Q5 -->
+                <div class="faq-row">
+                    <div class="faq-row-head" onclick="toggleFaqRow(this)">
+                        <span>Apakah undangan bisa dibuka di semua jenis perangkat?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-row-content">
+                        Ya, seluruh tema kami sudah diuji dan dioptimalkan secara responsif agar tampil proporsional dan
+                        mulus di layar smartphone Android, iPhone, Tablet iPad, hingga Laptop dan PC.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. BOTTOM BANNER CTA (PERSIS GAMBAR REFERENSI) -->
+        <div class="bottom-banner-cta">
+            <div>
+                <h2>Siap Membuat Undangan Pernikahan Impian Anda?</h2>
+                <p>Konsultasikan kebutuhan desain dan tanggal pernikahan Anda bersama tim ramah kami secara gratis.</p>
+            </div>
+            <div>
+                <a href="https://wa.me/6281234567890?text=Halo%20Admin%20Undangan%20Gue%2C%20saya%20ingin%20konsultasi%20pembuatan%20undangan%20pernikahan"
+                    target="_blank" class="btn-banner-wa">
+                    <i class="fab fa-whatsapp"></i> Chat WhatsApp Sekarang
+                </a>
+            </div>
         </div>
     </main>
 
-    <!-- Modal Device Preview -->
+    <!-- FLOATING WHATSAPP BUTTON (KANAN BAWAH) -->
+    <a href="https://wa.me/6281234567890?text=Halo%20Admin%20Undangan%20Gue%2C%20saya%20ingin%20konsultasi%20undangan%20pernikahan%20digital."
+        target="_blank" class="floating-wa-btn" id="floatingWaBtn" title="Chat Konsultasi WhatsApp">
+        <div class="floating-wa-icon"><i class="fab fa-whatsapp"></i></div>
+        <span>Konsultasi Gratis</span>
+    </a>
+
+    <!-- AUTH MODAL (DAFTAR / MASUK) -->
+    <div class="auth-modal" id="authModal" onclick="if(event.target===this)closeAuthModal()">
+        <div class="auth-card">
+            <button class="auth-close-btn" onclick="closeAuthModal()"><i class="fas fa-times"></i></button>
+            <div style="text-align:center;">
+                <h3 style="font-size:1.35rem; font-weight:800; color:#0f172a;" id="authTitle">Selamat Datang</h3>
+                <p style="font-size:0.84rem; color:#64748b; margin-top:3px;" id="authSub">Masuk ke akun undangan
+                    pernikahan digital Anda</p>
+            </div>
+            <div class="auth-tabs">
+                <button type="button" class="auth-tab-btn active" id="tabMasuk"
+                    onclick="setAuthTab('masuk')">Masuk</button>
+                <button type="button" class="auth-tab-btn" id="tabDaftar" onclick="setAuthTab('daftar')">Daftar
+                    Akun</button>
+            </div>
+            <form onsubmit="handleAuthSubmit(event)">
+                <div id="authNameGroup" style="display:none;">
+                    <input type="text" class="auth-input" placeholder="Nama Lengkap">
+                </div>
+                <input type="email" class="auth-input" placeholder="Email Anda" required>
+                <input type="password" class="auth-input" placeholder="Kata Sandi" required>
+                <button type="submit" class="auth-submit-btn" id="authSubmitBtn">Masuk Sekarang</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL DEVICE PREVIEW -->
     <div class="preview-modal" id="previewModal">
         <div class="modal-header">
             <div class="modal-theme-info">
                 <h3 id="modalThemeTitle">Preview Undangan</h3>
                 <p id="modalThemeCategory">Kategori &amp; Fitur</p>
             </div>
-
-            <!-- Device Dimension Buttons -->
-            <div class="device-switcher">
-                <button class="device-btn active" onclick="setDevice('mobile', this)" title="Tampilan HP (Mobile 412px)">
-                    <i class="fas fa-mobile-alt"></i>
-                </button>
-                <button class="device-btn" onclick="setDevice('tablet', this)" title="Tampilan Tablet (768px)">
-                    <i class="fas fa-tablet-alt"></i>
-                </button>
-                <button class="device-btn" onclick="setDevice('desktop', this)" title="Tampilan Desktop Penuh">
-                    <i class="fas fa-desktop"></i>
-                </button>
+            <div class="device-switcher-modal">
+                <button class="device-btn-m active" onclick="setModalDevice('mobile', this)"><i
+                        class="fas fa-mobile-alt"></i> HP</button>
+                <button class="device-btn-m" onclick="setModalDevice('tablet', this)"><i class="fas fa-tablet-alt"></i>
+                    Tab</button>
+                <button class="device-btn-m" onclick="setModalDevice('desktop', this)"><i class="fas fa-desktop"></i>
+                    PC</button>
             </div>
-
             <div class="modal-controls">
-                <a href="#" target="_blank" class="btn-open-tab" id="modalOpenTab">
-                    Buka Tab Baru <i class="fas fa-external-link-alt"></i>
-                </a>
-                <button class="btn-close-modal" onclick="closeModal()" title="Tutup Preview">
-                    <i class="fas fa-times"></i>
-                </button>
+                <a href="#" target="_blank" class="btn-open-tab" id="modalOpenTab">Buka Tab Baru <i
+                        class="fas fa-external-link-alt"></i></a>
+                <button class="btn-close-modal" onclick="closeModal()"><i class="fas fa-times"></i></button>
             </div>
         </div>
         <div class="modal-body">
@@ -1614,15 +3241,15 @@
         <span id="toastMsg">Tautan berhasil disalin!</span>
     </div>
 
-    <!-- Footer -->
+    <!-- FOOTER -->
     <footer>
         <div class="container">
-            <p>&copy; 2026 <strong>Undangan Gue</strong>. Semua tema lengkap dengan Musik Latar, Countdown Acara, RSVP &amp; Ucapan Live, Google Maps, dan Amplop Digital.</p>
+            <p>&copy; 2026 <strong>undangan gue</strong>. Seluruh tema dilengkapi Musik Latar, Countdown Acara, RSVP
+                Live, Google Maps, dan Amplop Digital.</p>
         </div>
     </footer>
 
     <script>
-        // Database Tema Undangan dengan Spesifikasi Visual Khas
         const THEMES = [
             {
                 id: 'sunda-siger',
@@ -1632,10 +3259,15 @@
                 categoryName: 'Adat Sunda',
                 desc: 'Nuansa adat Priangan dengan mahkota Siger kencana, aksara Sunda Buhun, panorama sawah hijau lembung, tampah bambu, dan roncean melati harum.',
                 thumb: './asset/img/pre1.jpeg',
+                thumb2: './asset/img/pre2.jpeg',
+                thumb3: './asset/img/pre6.jpeg',
                 path: 'themes/sunda-siger/index.html',
                 palette: ['#2e5639', '#548762', '#dbe6dc', '#d8b056'],
                 vibeIcon: 'fa-crown',
-                tags: ['Adat Sunda', 'Siger Kencana', 'Sampurasun', 'Sage Priangan']
+                tags: ['Adat Sunda', 'Siger Kencana', 'Sampurasun', 'Sage Priangan'],
+                priceRegular: 'Rp 198.000',
+                pricePromo: 'Rp 99.000',
+                discount: 'Disc 50%'
             },
             {
                 id: 'melati-prada',
@@ -1645,10 +3277,15 @@
                 categoryName: 'Adat Nusantara',
                 desc: 'Kemegahan busana pengantin klasik Nusantara dalam balutan merah marun agung, prada emas gemerlap, gapura keraton, dan untaian melati puspa bangsa.',
                 thumb: './asset/img/pre3.jpeg',
+                thumb2: './asset/img/pre4.jpeg',
+                thumb3: './asset/img/pre8.jpeg',
                 path: 'themes/melati-prada/index.html',
                 palette: ['#5c0f1c', '#8a1c2e', '#e6bb53', '#fdf3e2'],
                 vibeIcon: 'fa-gem',
-                tags: ['Marun & Emas', 'Songket Prada', 'Untaian Melati', 'Gapura Klasik']
+                tags: ['Marun & Emas', 'Songket Prada', 'Untaian Melati', 'Gapura Klasik'],
+                priceRegular: 'Rp 198.000',
+                pricePromo: 'Rp 99.000',
+                discount: 'Disc 50%'
             },
             {
                 id: 'kraton',
@@ -1658,10 +3295,15 @@
                 categoryName: 'Adat Jawa',
                 desc: 'Aura ningrat istana Jawa dengan guratan motif batik sogan klasik, aksara Jawa Hanacaraka, gunungan wayang kulit, dan hiasan emas prada keraton.',
                 thumb: './asset/img/pre4.jpeg',
+                thumb2: './asset/img/pre5.jpeg',
+                thumb3: './asset/img/pre1.jpeg',
                 path: 'themes/kraton/index.html',
                 palette: ['#422918', '#6a4325', '#d49d3d', '#f6eedf'],
                 vibeIcon: 'fa-landmark',
-                tags: ['Adat Jawa', 'Batik Sogan', 'Gunungan Wayang', 'Ningrat Agung']
+                tags: ['Adat Jawa', 'Batik Sogan', 'Gunungan Wayang', 'Ningrat Agung'],
+                priceRegular: 'Rp 198.000',
+                pricePromo: 'Rp 99.000',
+                discount: 'Disc 50%'
             },
             {
                 id: 'aurora',
@@ -1671,10 +3313,15 @@
                 categoryName: 'Dark & Luxury',
                 desc: 'Desain ultra modern dengan latar langit malam kosmik berhias pendaran aurora warna-warni, kartu kaca 3D-tilt, dan taburan bintang galaksi.',
                 thumb: './asset/img/pre6.jpeg',
+                thumb2: './asset/img/pre3.jpeg',
+                thumb3: './asset/img/pre5.jpeg',
                 path: 'themes/aurora/index.html',
                 palette: ['#0b0e1b', '#18203f', '#00e5ff', '#a855f7'],
                 vibeIcon: 'fa-meteor',
-                tags: ['Glassmorphism 3D', 'Neon Aurora', 'Dark Mode Kosmik', 'Futuristik']
+                tags: ['Glassmorphism 3D', 'Neon Aurora', 'Dark Mode Kosmik', 'Futuristik'],
+                priceRegular: 'Rp 249.000',
+                pricePromo: 'Rp 129.000',
+                discount: 'Disc 48%'
             },
             {
                 id: 'emerald',
@@ -1684,10 +3331,15 @@
                 categoryName: 'Dark & Luxury',
                 desc: 'Kemewahan era Great Gatsby memadukan beludru hijau zamrud gelap (emerald) dengan aksen geometris champagne gold bergaris Art Deco aristokrat.',
                 thumb: './asset/img/pre9.jpeg',
+                thumb2: './asset/img/pre1.jpeg',
+                thumb3: './asset/img/pre7.jpeg',
                 path: 'themes/emerald/index.html',
                 palette: ['#082a1f', '#12523d', '#d4af37', '#f4e7c3'],
                 vibeIcon: 'fa-feather-pointed',
-                tags: ['Emerald Zamrud', 'Champagne Gold', 'Art Deco Geometris', 'Gatsby Mewah']
+                tags: ['Emerald Zamrud', 'Champagne Gold', 'Art Deco Geometris', 'Gatsby Mewah'],
+                priceRegular: 'Rp 249.000',
+                pricePromo: 'Rp 129.000',
+                discount: 'Disc 48%'
             },
             {
                 id: 'botanica',
@@ -1697,23 +3349,33 @@
                 categoryName: 'Editorial & Paper',
                 desc: 'Estetika editorial majalah high-end bertekstur kertas handmade ivory, dedaunan sage olive, kelopak berguguran, serta amplop bersegel lilin terracotta nyata.',
                 thumb: './asset/img/pre2.jpeg',
+                thumb2: './asset/img/pre8.jpeg',
+                thumb3: './asset/img/pre5.jpeg',
                 path: 'themes/botanica/index.html',
                 palette: ['#f7f4ec', '#576a5a', '#b8533e', '#ded4c4'],
                 vibeIcon: 'fa-stamp',
-                tags: ['Kertas Ivory', 'Segel Lilin Realistis', 'Kelopak Bunga', 'Tiket RSVP']
+                tags: ['Kertas Ivory', 'Segel Lilin Realistis', 'Kelopak Bunga', 'Tiket RSVP'],
+                priceRegular: 'Rp 198.000',
+                pricePromo: 'Rp 99.000',
+                discount: 'Disc 50%'
             },
             {
                 id: 'classic-rose',
                 title: 'Classic Dusty Rose',
-                tagline: 'Original Romantis Amel & Rusdi',
+                tagline: 'Original Romantis Arkana & Aurora',
                 category: 'editorial',
                 categoryName: 'Editorial & Paper',
-                desc: 'Desain template original pertama Amel & Rusdi dengan sentuhan dusty rose lembut, ornamen bunga blush hangat, layout bersih, dan tipografi romantis.',
+                desc: 'Desain template original pertama Arkana & Aurora dengan sentuhan dusty rose lembut, ornamen bunga blush hangat, layout bersih, dan tipografi romantis.',
                 thumb: './asset/img/pre5.jpeg',
+                thumb2: './asset/img/pre1.jpeg',
+                thumb3: './asset/img/pre3.jpeg',
                 path: 'themes/classic-rose/index.html',
                 palette: ['#fff2f4', '#c77e87', '#7f3f47', '#e8c4a9'],
                 vibeIcon: 'fa-heart',
-                tags: ['Dusty Rose', 'Amel & Rusdi Original', 'Romantis Lembut', 'Elegan']
+                tags: ['Dusty Rose', 'Arkana & Aurora Original', 'Romantis Lembut', 'Elegan'],
+                priceRegular: 'Rp 198.000',
+                pricePromo: 'Rp 99.000',
+                discount: 'Disc 50%'
             },
             {
                 id: 'ungu-senja',
@@ -1723,10 +3385,15 @@
                 categoryName: 'Dark & Luxury',
                 desc: 'Eksotisme lembayung sore dengan gradasi plum dusk pekat, kabut lilac mist anggun, dan kilau aksen emas saffron yang memancarkan pesona magis.',
                 thumb: './asset/img/pre8.jpeg',
+                thumb2: './asset/img/pre4.jpeg',
+                thumb3: './asset/img/pre6.jpeg',
                 path: 'themes/ungu-senja/index.html',
                 palette: ['#3b1b4d', '#673582', '#b388dc', '#f5b041'],
                 vibeIcon: 'fa-moon',
-                tags: ['Lilac & Plum', 'Lembayung Senja', 'Saffron Gold', 'Dreamy Romantis']
+                tags: ['Lilac & Plum', 'Lembayung Senja', 'Saffron Gold', 'Dreamy Romantis'],
+                priceRegular: 'Rp 198.000',
+                pricePromo: 'Rp 99.000',
+                discount: 'Disc 50%'
             },
             {
                 id: 'pantai-frangipani',
@@ -1736,10 +3403,15 @@
                 categoryName: 'Tropical & Boho',
                 desc: 'Kehangatan pantai tropis pulau dewata dengan wangian bunga kamboja (frangipani), desir daun palem, terracotta hangat, dan deburan ombak laguna.',
                 thumb: './asset/img/pre7.jpeg',
-                path: 'themes/Pantai Frangipani/index.html',
+                thumb2: './asset/img/pre3.jpeg',
+                thumb3: './asset/img/pre2.jpeg',
+                path: 'themes/pantai-frangipani/index.html',
                 palette: ['#faf4ee', '#c65d3d', '#28727d', '#eedec7'],
                 vibeIcon: 'fa-sun',
-                tags: ['Tropical Boho', 'Bunga Kamboja', 'Pantai & Palem', 'Laguna Tropis']
+                tags: ['Tropical Boho', 'Bunga Kamboja', 'Pantai & Palem', 'Laguna Tropis'],
+                priceRegular: 'Rp 198.000',
+                pricePromo: 'Rp 99.000',
+                discount: 'Disc 50%'
             },
             {
                 id: 'batik',
@@ -1749,10 +3421,15 @@
                 categoryName: 'Adat Nusantara',
                 desc: 'Harmoni wastra nusantara kontemporer dengan motif batik klasik Kawung, Truntum bintang, Parang lereng, dan pinggiran Tumpal beraksen biru indigo & emas soga.',
                 thumb: './asset/img/pre3.jpeg',
+                thumb2: './asset/img/pre1.jpeg',
+                thumb3: './asset/img/pre9.jpeg',
                 path: 'themes/batik/index.html',
                 palette: ['#11213f', '#b5502f', '#d5ad55', '#f5efe3'],
                 vibeIcon: 'fa-scroll',
-                tags: ['Wastra Batik', 'Kawung & Truntum', 'Indigo & Soga', 'Tradisional Modern']
+                tags: ['Wastra Batik', 'Kawung & Truntum', 'Indigo & Soga', 'Tradisional Modern'],
+                priceRegular: 'Rp 198.000',
+                pricePromo: 'Rp 99.000',
+                discount: 'Disc 50%'
             },
             {
                 id: 'tideline-bento',
@@ -1762,10 +3439,15 @@
                 categoryName: 'Modern Bento',
                 desc: 'Inovasi tata letak bento grid ala aplikasi modern dengan palet warna mist sea blue, kuning hangat matahari, tipografi Instrument Serif, dan interaksi responsif.',
                 thumb: './asset/img/pre9.jpeg',
+                thumb2: './asset/img/pre5.jpeg',
+                thumb3: './asset/img/pre1.jpeg',
                 path: 'themes/tideline-bento/index.html',
                 palette: ['#0f2233', '#2f6f8f', '#f0b94a', '#eef3f5'],
                 vibeIcon: 'fa-table-cells-large',
-                tags: ['Bento Grid', 'Modern App Style', 'Sea Blue & Sun', 'Dock Navigation']
+                tags: ['Bento Grid', 'Modern App Style', 'Sea Blue & Sun', 'Dock Navigation'],
+                priceRegular: 'Rp 229.000',
+                pricePromo: 'Rp 119.000',
+                discount: 'Disc 48%'
             },
             {
                 id: 'golden-hour',
@@ -1775,25 +3457,139 @@
                 categoryName: 'Sinematik Scene',
                 desc: 'Visualisasi sinematik mewah di mana setiap seksi adalah 1 kanvas foto layar penuh dengan efek sunset dusk, kaca frosted glass, dan tipografi Fraunces puitis.',
                 thumb: './asset/img/pre3.jpeg',
+                thumb2: './asset/img/pre6.jpeg',
+                thumb3: './asset/img/pre8.jpeg',
                 path: 'themes/golden-hour/index.html',
                 palette: ['#0a1118', '#ffb26b', '#f08a7e', '#f6efe6'],
                 vibeIcon: 'fa-camera-retro',
-                tags: ['Full Scene Sinematik', 'Sunset Dusk', 'Warm Amber Glow', 'Split Screen']
+                tags: ['Full Scene Sinematik', 'Sunset Dusk', 'Warm Amber Glow', 'Split Screen'],
+                priceRegular: 'Rp 249.000',
+                pricePromo: 'Rp 129.000',
+                discount: 'Disc 48%'
+            },
+            {
+                id: 'obsidian-smoke',
+                title: 'Obsidian Smoke',
+                tagline: 'Hitam Obsidian & Abu Grafit Asap Melayang',
+                category: 'luxury',
+                categoryName: 'Dark Luxury',
+                desc: 'Kemewahan monokrom obsidian gelap dengan kepulan asap melayang halus, spotlight interaktif mengikuti kursor, tipografi Bodoni Moda, dan garis perak editorial.',
+                thumb: './asset/img/pre9.jpeg',
+                thumb2: './asset/img/pre3.jpeg',
+                thumb3: './asset/img/pre1.jpeg',
+                path: 'themes/obsidian-smoke/index.html',
+                palette: ['#0a0a0b', '#1a1a1c', '#cfcfd2', '#f4f4f5'],
+                vibeIcon: 'fa-smog',
+                tags: ['Obsidian Black', 'Smoke Drift', 'Bodoni Moda', 'Spotlight Cursor'],
+                priceRegular: 'Rp 249.000',
+                pricePromo: 'Rp 129.000',
+                discount: 'Disc 48%'
+            },
+            {
+                id: 'midnight-celestial',
+                title: 'Midnight Celestial',
+                tagline: 'Rasi Bintang Galaksi & Deep Cosmos Luxury',
+                category: 'luxury',
+                categoryName: 'Dark Luxury',
+                desc: 'Eksplorasi romansa antariksa berhias konstelasi bintang zodiak, debu kosmik perak gemerlap, bulan purnama sabit emas, dan malam midnight blue megah.',
+                thumb: './asset/img/pre6.jpeg',
+                thumb2: './asset/img/pre4.jpeg',
+                thumb3: './asset/img/pre8.jpeg',
+                path: 'themes/midnight-celestial/index.html',
+                palette: ['#070a14', '#151c38', '#ffd166', '#e0e7ff'],
+                vibeIcon: 'fa-star',
+                tags: ['Constellation', 'Midnight Blue', 'Stardust Gold', 'Galactic Luxury'],
+                priceRegular: 'Rp 249.000',
+                pricePromo: 'Rp 129.000',
+                discount: 'Disc 48%'
+            },
+            {
+                id: 'indigo-bloom',
+                title: 'Indigo Bloom',
+                tagline: 'Wastra Tenun Indigo & Arch Floral Geometris',
+                category: 'adat',
+                categoryName: 'Adat Nusantara',
+                desc: 'Perpaduan agung warna biru celupan indigo alami dengan aksen lengkung arsitektur gerbang floral, ornamen songket tenun ikat, dan tipografi kontemporer.',
+                thumb: './asset/img/pre3.jpeg',
+                thumb2: './asset/img/pre9.jpeg',
+                thumb3: './asset/img/pre1.jpeg',
+                path: 'themes/indigo-bloom/index.html',
+                palette: ['#0d1b2a', '#1b263b', '#778da9', '#e0e1dd'],
+                vibeIcon: 'fa-spa',
+                tags: ['Indigo Blue', 'Tenun Ikat', 'Arch Floral', 'Modern Nusantara'],
+                priceRegular: 'Rp 198.000',
+                pricePromo: 'Rp 99.000',
+                discount: 'Disc 50%'
+            },
+            {
+                id: 'black-diamond',
+                title: 'Black Diamond',
+                tagline: 'Monokrom Hitam Mewah & Kilau Permata Berlian',
+                category: 'luxury',
+                categoryName: 'Dark Luxury',
+                desc: 'Elegansi abadi serba hitam pekat dengan sorot prisma berlian facet, tekstur karbon premium, garis batas perak murni, dan kesan aristokrat eksklusif.',
+                thumb: './asset/img/pre1.jpeg',
+                thumb2: './asset/img/pre7.jpeg',
+                thumb3: './asset/img/pre4.jpeg',
+                path: 'themes/black-diamond/index.html',
+                palette: ['#0f0f10', '#1c1c1f', '#e2e8f0', '#94a3b8'],
+                vibeIcon: 'fa-diamond',
+                tags: ['Monochrome Black', 'Diamond Prism', 'High Aristocrat', 'Minimalis Mewah'],
+                priceRegular: 'Rp 249.000',
+                pricePromo: 'Rp 129.000',
+                discount: 'Disc 48%'
+            },
+            {
+                id: 'blue-water',
+                title: 'Blue Water Serenade',
+                tagline: 'Biru Samudera Ombak Lembut & Pesisir Romantis',
+                category: 'nature',
+                categoryName: 'Tropical & Nature',
+                desc: 'Ketenangan deburan air biru kristal laut pesisir pantai dengan garis riak ombak lembut, angin sepoi-sepoi, dan ketenangan alam terbuka yang damai.',
+                thumb: './asset/img/pre5.jpeg',
+                thumb2: './asset/img/pre2.jpeg',
+                thumb3: './asset/img/pre6.jpeg',
+                path: 'themes/blue-water/index.html',
+                palette: ['#0a192f', '#172a45', '#64ffda', '#ccd6f6'],
+                vibeIcon: 'fa-water',
+                tags: ['Coastal Sea', 'Ocean Wave', 'Cyan Mist', 'Romantic Serenade'],
+                priceRegular: 'Rp 198.000',
+                pricePromo: 'Rp 99.000',
+                discount: 'Disc 50%'
             }
         ];
 
         let currentGuest = 'Bapak / Ibu / Saudara/i';
 
-        // Render Themes to Grid dengan styling unik tiap tema
+        // Switcher Frame Device Antar HP / Tab / PC
+        function switchDevice(btn, deviceType) {
+            const stage = btn.closest('.mockup-stage');
+            if (!stage) return;
+
+            stage.querySelectorAll('.dev-tab').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            stage.querySelectorAll('.mockup-view').forEach(v => v.classList.remove('active'));
+            const targetView = stage.querySelector(`.view-${deviceType}`);
+            if (targetView) {
+                targetView.classList.add('active');
+            }
+        }
+
+        // Render Themes to Grid dengan Mockup Frame Natural (TANPA DESKRIPSI CARD)
         function renderThemes(filter = 'all') {
             const container = document.getElementById('themes-container');
+            if (!container) return;
             container.innerHTML = '';
 
-            const filtered = filter === 'all' 
-                ? THEMES 
+            const filtered = filter === 'all'
+                ? THEMES
                 : THEMES.filter(t => t.category === filter);
 
-            document.getElementById('theme-count').textContent = THEMES.length;
+            const countElem = document.getElementById('theme-count');
+            if (countElem) {
+                countElem.textContent = THEMES.length;
+            }
 
             filtered.forEach(theme => {
                 const targetUrl = `${theme.path}?to=${encodeURIComponent(currentGuest)}`;
@@ -1801,55 +3597,125 @@
                 card.className = 'theme-card';
                 card.dataset.themeId = theme.id;
 
+                const thumbMobile = `./asset/img/thumbnails/${theme.id}/mobile.jpg`;
+                const thumbMobile2 = `./asset/img/thumbnails/${theme.id}/mobile-2.jpg`;
+                const thumbMobile3 = `./asset/img/thumbnails/${theme.id}/mobile-3.jpg`;
+                const thumbTablet = `./asset/img/thumbnails/${theme.id}/tablet.jpg`;
+                const thumbDesktop = `./asset/img/thumbnails/${theme.id}/desktop.jpg`;
+
+                const cleanPromoPrice = (theme.pricePromo || 'Rp 99.000').replace(/[^0-9.]/g, '').trim();
+
                 card.innerHTML = `
-                    <!-- Palette & Vibe Bar -->
-                    <div class="card-palette-bar">
-                        <div class="palette-dots" title="Palet Warna Khas Tema">
-                            ${theme.palette.map(c => `<span class="palette-dot" style="background-color: ${c};"></span>`).join('')}
+                    <div class="mockup-stage" data-active-device="trio">
+                        <div class="mockup-pill-badge">
+                            <i class="fas ${theme.vibeIcon}"></i> <span>${theme.categoryName}</span>
                         </div>
-                        <div class="card-vibe-pill">
-                            <i class="fas ${theme.vibeIcon}"></i> ${theme.categoryName}
-                        </div>
-                    </div>
 
-                    <!-- Card Thumbnail with Custom Overlay -->
-                    <div class="card-thumb">
-                        <img src="${theme.thumb}" alt="${theme.title}" loading="lazy">
-                        <div class="card-overlay">
-                            <span class="badge-style">
-                                <i class="fas ${theme.vibeIcon}"></i> ${theme.title}
-                            </span>
-                            <span class="badge-quick-id">Live Demo</span>
+                        <div class="mockup-corner-ribbon">
+                            <span>${theme.discount || 'Disc 50%'}</span>
                         </div>
-                    </div>
 
-                    <!-- Card Body -->
-                    <div class="card-body">
-                        <div class="card-title-group">
-                            <div class="card-title">
-                                <span>${theme.title}</span>
-                                <i class="fas fa-sparkles" style="font-size:0.9rem; opacity:0.6;"></i>
+                        <div class="device-switcher" role="tablist">
+                            <button type="button" class="dev-tab active" data-device="trio" title="Showcase 3 HP" onclick="switchDevice(this, 'trio')">
+                                <i class="fas fa-layer-group"></i> <span>3x HP</span>
+                            </button>
+                            <button type="button" class="dev-tab" data-device="phone" title="Frame HP" onclick="switchDevice(this, 'phone')">
+                                <i class="fas fa-mobile-screen"></i> <span>HP</span>
+                            </button>
+                            <button type="button" class="dev-tab" data-device="tablet" title="Frame Tab" onclick="switchDevice(this, 'tablet')">
+                                <i class="fas fa-tablet-screen-button"></i> <span>Tab</span>
+                            </button>
+                            <button type="button" class="dev-tab" data-device="desktop" title="Frame Laptop" onclick="switchDevice(this, 'desktop')">
+                                <i class="fas fa-laptop"></i> <span>PC</span>
+                            </button>
+                        </div>
+
+                        <div class="mockup-viewport">
+                            <div class="mockup-view view-trio active">
+                                <div class="phone-frame phone-trio phone-left">
+                                    <div class="phone-island"></div>
+                                    <div class="phone-screen">
+                                        <img src="${thumbMobile}" onerror="this.onerror=null; this.src='${theme.thumb}'" alt="${theme.title} HP 1" loading="lazy">
+                                    </div>
+                                    <div class="phone-glare"></div>
+                                    <div class="phone-home-bar"></div>
+                                </div>
+                                <div class="phone-frame phone-trio phone-center">
+                                    <div class="phone-island"></div>
+                                    <div class="phone-screen">
+                                        <img src="${thumbMobile2}" onerror="this.onerror=null; this.src='${theme.thumb2 || theme.thumb}'" alt="${theme.title} HP 2" loading="lazy">
+                                    </div>
+                                    <div class="phone-glare"></div>
+                                    <div class="phone-home-bar"></div>
+                                </div>
+                                <div class="phone-frame phone-trio phone-right">
+                                    <div class="phone-island"></div>
+                                    <div class="phone-screen">
+                                        <img src="${thumbMobile3}" onerror="this.onerror=null; this.src='${theme.thumb3 || theme.thumb}'" alt="${theme.title} HP 3" loading="lazy">
+                                    </div>
+                                    <div class="phone-glare"></div>
+                                    <div class="phone-home-bar"></div>
+                                </div>
                             </div>
-                            <div class="card-tagline">${theme.tagline}</div>
+
+                            <div class="mockup-view view-phone">
+                                <div class="phone-frame phone-single">
+                                    <div class="phone-button btn-vol-up"></div>
+                                    <div class="phone-button btn-vol-down"></div>
+                                    <div class="phone-button btn-power"></div>
+                                    <div class="phone-island"></div>
+                                    <div class="phone-screen">
+                                        <img src="${thumbMobile}" onerror="this.onerror=null; this.src='${theme.thumb}'" alt="${theme.title} Mobile" loading="lazy">
+                                    </div>
+                                    <div class="phone-glare"></div>
+                                    <div class="phone-home-bar"></div>
+                                </div>
+                            </div>
+
+                            <div class="mockup-view view-tablet">
+                                <div class="tablet-frame">
+                                    <div class="tablet-cam"></div>
+                                    <div class="tablet-screen">
+                                        <img src="${thumbTablet}" onerror="this.onerror=null; this.src='${theme.thumb}'" alt="${theme.title} Tablet" loading="lazy">
+                                    </div>
+                                    <div class="tablet-glare"></div>
+                                </div>
+                            </div>
+
+                            <div class="mockup-view view-desktop">
+                                <div class="laptop-frame">
+                                    <div class="laptop-lid">
+                                        <div class="laptop-notch"></div>
+                                        <div class="laptop-screen">
+                                            <img src="${thumbDesktop}" onerror="this.onerror=null; this.src='${theme.thumb}'" alt="${theme.title} Desktop" loading="lazy">
+                                        </div>
+                                        <div class="laptop-glare"></div>
+                                    </div>
+                                    <div class="laptop-base"><div class="laptop-groove"></div></div>
+                                </div>
+                            </div>
                         </div>
 
-                        <p class="card-desc">${theme.desc}</p>
+                        <a href="${targetUrl}" target="_blank" class="mockup-hover-cue" title="Buka Undangan Penuh">
+                            <i class="fas fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </div>
 
-                        <div class="card-tags">
-                            ${theme.tags.map(t => `<span class="tag">${t}</span>`).join('')}
-                        </div>
+                    <div class="card-body">
+                        <h3 class="card-theme-name">${theme.title}</h3>
+                        <div class="card-price-strike">${theme.priceRegular || 'Rp198.000'}</div>
+                        <div class="card-price-current">Rp${cleanPromoPrice || '99.000'}</div>
 
-                        <!-- Card Action Buttons -->
                         <div class="card-actions">
-                            <a href="${targetUrl}" target="_blank" class="btn-preview" title="Buka undangan penuh di tab baru">
-                                <i class="fas fa-eye"></i> Buka Tema
+                            <a href="${targetUrl}" target="_blank" class="btn-lihat-contoh" title="Lihat Contoh Undangan">
+                                Lihat Contoh
                             </a>
-                            <button class="btn-modal-view" onclick="openModal('${theme.id}')" title="Preview Interaktif (HP / Tablet)">
+                            <button class="btn-action-icon btn-modal-view" onclick="openModal('${theme.id}')" title="Preview Perangkat">
                                 <i class="fas fa-expand"></i>
                             </button>
-                            <button class="btn-copy-link" onclick="copyThemeLink('${targetUrl}')" title="Salin Tautan dengan Nama Tamu">
-                                <i class="fas fa-link"></i>
-                            </button>
+                            <a href="https://wa.me/6281234567890?text=${encodeURIComponent('Halo, saya tertarik pesan tema: ' + theme.title)}" target="_blank" class="btn-action-icon btn-wa-order" title="Pesan via WA">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
                         </div>
                     </div>
                 `;
@@ -1857,7 +3723,7 @@
             });
         }
 
-        // Filter Buttons Behavior
+        // Filter Buttons
         document.querySelectorAll('.filter-btn').forEach(btn => {
             btn.addEventListener('click', () => {
                 document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
@@ -1866,116 +3732,83 @@
             });
         });
 
-        // Navbar Actions & Helpers
-        function quickFilter(category) {
-            document.querySelectorAll('.filter-btn').forEach(b => {
-                b.classList.toggle('active', b.dataset.filter === category);
-            });
-            renderThemes(category);
-            const target = document.getElementById('themes-container');
-            if (target) {
-                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
-        }
-
-        function focusGuestInput() {
-            const input = document.getElementById('guest-input');
-            if (input) {
-                input.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                setTimeout(() => {
-                    input.focus();
-                    input.select();
-                }, 350);
-            }
-        }
-
-        function toggleMobileMenu() {
-            const drawer = document.getElementById('mobileDrawer');
-            const btn = document.getElementById('navToggleBtn');
-            const isExpanded = btn.getAttribute('aria-expanded') === 'true';
-            btn.setAttribute('aria-expanded', !isExpanded);
-            btn.classList.toggle('active');
-            drawer.classList.toggle('active');
-        }
-
-        function closeMobileMenu() {
-            const drawer = document.getElementById('mobileDrawer');
-            const btn = document.getElementById('navToggleBtn');
-            if (btn && drawer) {
-                btn.setAttribute('aria-expanded', 'false');
-                btn.classList.remove('active');
-                drawer.classList.remove('active');
-            }
-        }
-
-        // Close mobile drawer on outside click
-        document.addEventListener('click', (e) => {
-            const header = document.getElementById('mainHeader');
-            if (header && !header.contains(e.target)) {
-                closeMobileMenu();
-            }
-        });
-
-        // Sticky header elevation on scroll
-        window.addEventListener('scroll', () => {
-            const header = document.getElementById('mainHeader');
-            if (header) {
-                if (window.scrollY > 25) {
-                    header.classList.add('scrolled');
-                } else {
-                    header.classList.remove('scrolled');
-                }
-            }
-        }, { passive: true });
-
-        // Update Guest Parameter
+        // Guest Links
         function updateGuestLinks() {
             const val = document.getElementById('guest-input').value.trim();
             currentGuest = val || 'Bapak / Ibu / Saudara/i';
             const activeFilter = document.querySelector('.filter-btn.active').dataset.filter;
             renderThemes(activeFilter);
-            const mobileGuest = document.getElementById('mobileGuestLabel');
-            if (mobileGuest) mobileGuest.textContent = currentGuest;
-            showToast(`Nama tamu diubah ke "${currentGuest}"`);
+            showToast(`Nama tamu diatur ke "${currentGuest}"`);
         }
 
-        document.getElementById('guest-input').addEventListener('keydown', (e) => {
-            if (e.key === 'Enter') updateGuestLinks();
-        });
-
-        // Copy Theme Link to Clipboard
-        function copyThemeLink(relPath) {
-            const fullUrl = new URL(relPath, window.location.href).href;
-            navigator.clipboard.writeText(fullUrl).then(() => {
-                showToast('Tautan undangan berhasil disalin!');
-            }).catch(() => {
-                showToast('Gagal menyalin tautan');
-            });
+        // FAQ Toggle
+        function toggleFaqRow(headElem) {
+            const row = headElem.closest('.faq-row');
+            const wasOpen = row.classList.contains('open');
+            document.querySelectorAll('.faq-row').forEach(r => r.classList.remove('open'));
+            if (!wasOpen) row.classList.add('open');
         }
 
-        function showToast(msg) {
-            const toast = document.getElementById('toastBox');
-            document.getElementById('toastMsg').textContent = msg;
-            toast.classList.add('show');
-            setTimeout(() => {
-                toast.classList.remove('show');
-            }, 2500);
+        // Mobile Nav Drawer Toggle
+        function toggleMobileNav() {
+            const drawer = document.getElementById('mobileDrawer');
+            if (drawer) drawer.classList.toggle('active');
         }
 
-        // Device Preview Modal
-        let activeTheme = null;
+        // Auth Modal Handlers
+        let currentAuthTab = 'masuk';
+        function openAuthModal(tab = 'masuk') {
+            setAuthTab(tab);
+            document.getElementById('authModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
 
+        function closeAuthModal() {
+            document.getElementById('authModal').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function setAuthTab(tab) {
+            currentAuthTab = tab;
+            const tabM = document.getElementById('tabMasuk');
+            const tabD = document.getElementById('tabDaftar');
+            const groupN = document.getElementById('authNameGroup');
+            const btnS = document.getElementById('authSubmitBtn');
+            const title = document.getElementById('authTitle');
+            const sub = document.getElementById('authSub');
+
+            if (tab === 'daftar') {
+                tabD.classList.add('active');
+                tabM.classList.remove('active');
+                groupN.style.display = 'block';
+                btnS.textContent = 'Daftar Akun Baru';
+                title.textContent = 'Buat Akun Undangan';
+                sub.textContent = 'Mulai kelola undangan digital pernikahan Anda';
+            } else {
+                tabM.classList.add('active');
+                tabD.classList.remove('active');
+                groupN.style.display = 'none';
+                btnS.textContent = 'Masuk Sekarang';
+                title.textContent = 'Selamat Datang';
+                sub.textContent = 'Masuk ke akun undangan pernikahan digital Anda';
+            }
+        }
+
+        function handleAuthSubmit(e) {
+            e.preventDefault();
+            closeAuthModal();
+            showToast('Akun berhasil diakses!');
+        }
+
+        // Modal Preview Handlers
         function openModal(themeId) {
             const theme = THEMES.find(t => t.id === themeId);
             if (!theme) return;
-            activeTheme = theme;
-
             const url = `${theme.path}?to=${encodeURIComponent(currentGuest)}`;
-            document.getElementById('modalThemeTitle').innerHTML = `<i class="fas ${theme.vibeIcon}" style="color:var(--gold);"></i> ${theme.title}`;
-            document.getElementById('modalThemeCategory').textContent = `${theme.categoryName} • ${theme.tagline}`;
+            document.getElementById('modalThemeTitle').textContent = theme.title;
+            document.getElementById('modalThemeCategory').textContent = theme.categoryName;
             document.getElementById('previewIframe').src = url;
             document.getElementById('modalOpenTab').href = url;
-
             document.getElementById('previewModal').classList.add('active');
             document.body.style.overflow = 'hidden';
         }
@@ -1986,20 +3819,28 @@
             document.body.style.overflow = '';
         }
 
-        function setDevice(device, elem) {
+        function setModalDevice(device, elem) {
             const wrapper = document.getElementById('iframeWrapper');
-            document.querySelectorAll('.device-btn').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.device-btn-m').forEach(b => b.classList.remove('active'));
             elem.classList.add('active');
-
             wrapper.className = 'iframe-wrapper ' + (device === 'mobile' ? '' : device);
         }
 
-        // Close modal on Escape
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && document.getElementById('previewModal').classList.contains('active')) {
-                closeModal();
+        function showToast(msg) {
+            const toast = document.getElementById('toastBox');
+            document.getElementById('toastMsg').textContent = msg;
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 2500);
+        }
+
+        // Header Scrolled Class
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('mainHeader');
+            if (header) {
+                if (window.scrollY > 20) header.classList.add('scrolled');
+                else header.classList.remove('scrolled');
             }
-        });
+        }, { passive: true });
 
         // Initial Render
         renderThemes();
